@@ -1,0 +1,1 @@
+# mvmp_strapi
