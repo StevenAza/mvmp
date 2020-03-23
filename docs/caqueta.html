@@ -182,12 +182,12 @@
 
 <div id="laterales_caqueta">
     <section class="story lat_2">
-        <div class="titulo"><h2>Conflicto armado en Caquetá</h2></div>
         <div class="cerrar-lateral">
+            <div class="titulo"><h2>Conflicto armado en Caquetá</h2></div>
             <div class="bg" ></div>
             <div class="boton"></div>
         </div>
-        <div id="fullpage-interna">
+        <div id="fullpage-interna" class="hide">
             <section class="buttonset">
                 <div id="cerrarStory">
                 </div>
@@ -293,10 +293,12 @@
                 navigationPosition: 'right',
                 afterRender: function(){
                     testLateral = true;
-                }
+                },
             });
+            $('#fullpage-interna').toggleClass('hide');
+            window.location = '#1';
         }, 2000);
-
+        
     });
 
     $storyRight2 = $('.story.violencia');
@@ -338,21 +340,7 @@
         $(this).toggleClass('active');
         $storyRight7.toggleClass('story-open');
     });
-    function cerrarLateral(e) {
-        testLateral = false;
-        selector = "section.lat_" + e;
-        ancla = "#" + e;
-        $(selector).toggleClass('story-open');
-        fullpage_api.destroy('#fullpage-interna');
-        /* funciones plugin fullpage */
-        var myFullpage = new fullpage('#fullpage', {
-            anchors: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
-            navigation: true,
-            navigationPosition: 'right',
-            lazyLoading: true,
-        });
-        window.location = ancla
-    }
+
 </script>
 </body>
 </html>

@@ -32,7 +32,22 @@ $(document).ready(function(){
 });
 
 
-
+function cerrarLateral(e) {
+    testLateral = false;
+    selector = "section.lat_" + e;
+    ancla = "#" + e;
+    $(selector).toggleClass('story-open');
+    fullpage_api.destroy('#fullpage-interna');
+    /* funciones plugin fullpage */
+    var myFullpage = new fullpage('#fullpage', {
+        anchors: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+        navigation: true,
+        navigationPosition: 'right',
+        lazyLoading: true,
+    });
+    window.location = ancla,
+    $('#fullpage-interna').toggleClass('hide')
+}
 
 
 
