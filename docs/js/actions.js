@@ -21,73 +21,17 @@ $(document).ready(function(){
         navigationPosition: 'right'
     });
     $(".cerrar-lateral").click(function() {
+        debugger;
+        var valorregreso = this.lastElementChild.attributes[1].value;
         if (testLateral == true){   
-            cerrarLateral(numeroAncla)
+            cerrarLateral(valorregreso);
         }
     }); 
     /* fin FULLPAGE HISTORIA CENTRAL */
 
     /* inicio FULLPAGE HISTORIAS LATERALES */
     /* Ingrid ¿esto se puede general en un bucle que cuenta las páginas y sus secciones? */
-    $storyRight2 = $('.story.lat_2');
-    $boton2 = $('#btn_2');		
-    $boton2.click(function() {
-        $(this).toggleClass('active');
-        $storyRight2.toggleClass('story-open');
-        setTimeout(function(){
-            fullpage_api.destroy('#fullpage');
-            /* funciones plugin fullpage-interna */
-            var myFullpage = new fullpage('#fullpage-interna-lat_2', {
-                navigation: true,
-                navigationPosition: 'right',
-                afterRender: function(){
-                    testLateral = true;
-                },
-            });
-            $('#fullpage-interna-lat_2').toggleClass('hide');
-            window.location = '#1';
-        }, 2000); 
-    });
-
-    $storyRight3 = $('.story.lat_3');
-    $boton3 = $('#btn_3');		
-    $boton3.click(function() {
-        $(this).toggleClass('active');
-        $storyRight3.toggleClass('story-open');
-        setTimeout(function(){
-            fullpage_api.destroy('#fullpage');
-            /* funciones plugin fullpage-interna */
-            var myFullpage = new fullpage('#fullpage-interna-lat_3', {
-                navigation: true,
-                navigationPosition: 'right',
-                afterRender: function(){
-                    testLateral = true;
-                },
-            });
-            $('#fullpage-interna-lat_3').toggleClass('hide');
-            window.location = '#1';
-        }, 2000); 
-    });
-
-    $storyRight4 = $('.story.lat_4');
-    $boton4 = $('#btn_4');		
-    $boton4.click(function() {
-        $(this).toggleClass('active');
-        $storyRight4.toggleClass('story-open');
-        setTimeout(function(){
-            fullpage_api.destroy('#fullpage');
-            /* funciones plugin fullpage-interna */
-            var myFullpage = new fullpage('#fullpage-interna-lat_4', {
-                navigation: true,
-                navigationPosition: 'right',
-                afterRender: function(){
-                    testLateral = true;
-                },
-            });
-            $('#fullpage-interna-lat_4').toggleClass('hide');
-            window.location = '#1';
-        }, 2000); 
-    });
+    /*--------------------------------------------*/
     /* fin FULLPAGE HISTORIAS LATERALES */
 
 
@@ -97,14 +41,61 @@ $(document).ready(function(){
     const player_tres = new Plyr('#audio_tres', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
     const player_cuatro = new Plyr('#audio_cuatro', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
 
+    asignateValueButton();
 
+   
 });
 
 
 
+function asignateValueButton() {
+    debugger;
+    var buttons = $('.fp-section.fp-table .btn a');
+    buttons.attr("data-page", "");
+    buttons.attr("ontouchstart", "clicAPage(this)");
+    buttons.attr("onclick", "clicAPage(this)"); 
+
+    var regreso = $('.cerrar-lateral .boton');
+    regreso.attr("data-regreso", "");
+   // regreso.attr("ontouchstart", "cerrarLateral()");
+    //regreso.attr("onclick", "cerrarLateral()");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].attributes[2].value = i + 2;
+    }
+
+    for (var i = 0; i < regreso.length; i++) {
+        debugger;
+        regreso[i].attributes[1].value = i + 2;
+    }
+
+}
+var controlA;
+function clicAPage(control) {
+    controlA = control.attributes[2].value;  
+    var elementoPadre = $('#fullpage-interna-lat_'+ controlA);
+    var objcontent = elementoPadre[0].parentElement;
+    $(objcontent).toggleClass('story-open');        
+    $(control).toggleClass('active');   
+    setTimeout(function(){
+        fullpage_api.destroy('#fullpage');        
+        var myFullpage = new fullpage('#fullpage-interna-lat_'+ controlA, {
+            navigation: true,
+            navigationPosition: 'right',
+            afterRender: function(){
+                testLateral = true;
+            },
+        });
+                
+        $('#fullpage-interna-lat_'+ controlA).toggleClass('hide');
+        window.location = '#1';
+    }, 2000); 
+	
+}
+
 /* inicio CERRAR LATERALES */
 var numeroAncla;
 function cerrarLateral(e) {
+    debugger;
     numeroAncla = e;
     var testLateral = false;
     var selector = "section.lat_" + e;
