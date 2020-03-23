@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<title>Nikol y Telegordo - Memoria del periodismo</title>
+	<meta name="author" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="Resource-type" content="Document" />
+
+    <link rel="stylesheet" type="text/css" href="../css/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/lazysizes.min.js"></script>
+    <script src="../js/actions.js"></script>
+</head>
+
+<body>
+    
+    <div id="fullpage">
+    <section class="buttonset">
+        <div id="cerrarStory">
+        </div>
+    </section>
+    <div class="section" id="section0">
+        <div class="ComponentBgContainer">
+            <div class="ComponentBgContainer playervideo">
+                <video id="video_uno" controls data-autoplay>
+                    <source src="video/Museo - Caquet - Beln - Trailer TeleGordo.mp4" type="video/mp4">
+                </video>
+                <p>Trailer serie Telegordo donde anuncian que ganaron el Premio Nacional de Televisión Infantil y hacen una invitación a participar en la producción de ocho películas - Archivo Escuela Audiovisual Infantil.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section1">
+        <div class="ComponentBgContainer">
+            <div class="ComponentBg ComponentBg--cover ComponentBg--overlay ComponentBgContainer lazyloaded">
+                <div class="ComponentBg ComponentBg--cover ComponentBgImg lazyloaded" style="background-image: url('foto/museo-flip-caqueta-tira6-02.jpg'); "></div>
+            </div>
+            <div class="TextWrapper">
+                <h2 class="TextComponent TextComponent--lateral animated animated-slow fadeInUp" style="animation-delay: 0.75s;">Lo más importante de la cámara es el ojo, la mirada de Nikol ya tiene la profundidad. Su producción cinematográfica es tan amplia como su sonrisa. </h2>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section2">
+        <div class="ComponentBgContainer">
+            <div class="ComponentBg ComponentBg--cover ComponentBg--overlay ComponentBgContainer lazyloaded">
+                <div class="ComponentBg ComponentBg--cover ComponentBgImg lazyloaded" style="background-image: url('foto/museo-flip-caqueta-tira6-01.jpg'); "></div>
+            </div>
+            <div class="TextWrapper">
+                <h2 class="TextComponent TextComponent--lateral animated animated-slow fadeInUp" style="animation-delay: 0.75s;"> <i>“A mí me interesa el reportaje. Con mis amigos salimos a entrevistar personas, porque a veces esas personas se nos van, y así nos queda el recuerdo”.</i>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section3">
+        <div class="ComponentBgContainer playervideo">
+            <video controls data-autoplay>
+                <source src="video/Museo - Caquet - Beln - Entrevista a Nikol Gonzlez.mp4" type="video/mp4">
+            </video>
+            <p>Nikol González habla sobre su experiencia en la Escuela Audiovisual Infantil de Belén de los Andaquíes.</p>
+        </div>
+    </div>
+    
+    </div>
+
+
+<script type="text/javascript" src="../js/fullpage.js"></script>
+<script type="text/javascript">
+    /* funciones plugin fullpage */
+    var myFullpage = new fullpage('#fullpage', {
+        anchors: ['intro', 'uno', 'dos', 'tres', 'cuatro'],
+        sectionsColor: ['#af90c4', '#0a7c87', '#7E8F7C'],
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: ['Trailer', 'Mirada Nikol', 'reportaje', 'Historia Nikol']
+    });
+    document.getElementById("video_uno").pause();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<title>Linda Stereo  - Memoria del periodismo</title>
+	<meta name="author" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="Resource-type" content="Document" />
+
+    <link rel="stylesheet" type="text/css" href="../css/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/lazysizes.min.js"></script>
+    <script src="../js/actions.js"></script>
+
+    <script src="../js/plugins/html5media.min.js"></script>
+    <script src="../js/plugins/plyr.min.js"></script>
+</head>
+
+<body>
+    
+<div id="fullpage">
+    <section class="buttonset">
+        <div id="cerrarStory">
+        </div>
+    </section>
+    <div class="section">
+        <div class="ComponentBgContainer">
+            <div class="ComponentBg ComponentBg--cover ComponentBg--overlay ComponentBgContainer lazyloaded">
+                <video loop id="video_uno" data-autoplay>
+                    <source src="video/Museo - Caquet - Paujl Loop 1.mp4" type="video/mp4">
+                  </video>           
+             </div>
+             <div class="TextWrapper">
+                <h2 class="TextComponent TextComponent--lateral animated animated-slow fadeInUp" style="animation-delay: 0.75s;">Para Rosemary, el ejercicio periodístico está relacionado con el servicio a la gente, y a su vez, la organización de la comunidad necesita ejes informativos como soporte. Lo uno sin lo otro carece de sentido.</h2>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section3">
+        <div class="ComponentBgContainer">
+            <div class="ComponentBg ComponentBg--cover ComponentBg--overlay ComponentBgContainer lazyloaded">
+                <div class="ComponentBg ComponentBg--cover ComponentBgImg lazyloaded" style="background-image: url('foto/');"></div>
+                
+            </div>
+            <span class="TextComponent--audio">Rosemary - Ataques al medio</span>
+            <audio id="audio_uno" playsinline>
+                <source src="audio/Entrevista a Rosemary Betancourt  - Ataques al medio.mp3" type="audio/mp3">
+            </audio>
+            <span class="TextComponent--audio">Rosemary - Programación emisora</span>
+            <audio id="audio_dos" playsinline>
+                <source src="audio/Entrevista a Rosemary Betancourt  - Programación emisora.mp3" type="audio/mp3">
+            </audio>
+            <span class="TextComponent--audio">Rosemary - La independencia de la emisora</span>
+            <audio id="audio_tres" playsinline>
+                <source src="audio/Entrevista a Rosemary Betancourt - La independencia de la emisora.mp3" type="audio/mp3">
+            </audio>
+
+        </div>
+    </div>
+    
+ </div>
+
+
+<script type="text/javascript" src="../js/fullpage.js"></script>
+<script type="text/javascript">
+    /* funciones plugin fullpage */
+    var myFullpage = new fullpage('#fullpage', {
+        anchors: ['intro', 'uno',],
+        sectionsColor: ['#af90c4', '#0a7c87'],
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: ['Introducción', 'Radio']
+    });
+        // player audio
+        const player_uno = new Plyr('#audio_uno', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
+    const player_dos = new Plyr('#audio_dos', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
+    const player_tres = new Plyr('#audio_tres', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
+    const player_cuatro = new Plyr('#audio_cuatro', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
+
+</script>
+
+</body>
+</html>

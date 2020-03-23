@@ -1,0 +1,657 @@
+/*!
+ * Estilos museo virtual FLIP 20200208 5:05 PM
+ * Juan Carlos Arroyo Sosa jcarroyos@gmail.com
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:200,400,700,800&display=swap&subset=latin-ext');
+@import url('animate.css');
+@import url('base.css');
+
+ // paleta de color
+ @blanco: #ffffff;
+ @blanco2: #d1d1d1;
+ @morado: #2c2327;
+ @negro: #000000;∫
+
+
+/* >>> INICIO estilos generales */
+body {
+    margin: 0;
+}
+h1{
+    font-family: 'Ibarra Real Nova', serif;
+    font-size: 5em;
+    color: #fff;
+    margin: 0px;
+}
+
+/* INICIO >>> hacks estilos base */
+
+.ButtonCta--icon:hover {
+    background: transparent;
+    color: #fff;
+}
+.ComponentBg--cover.bgtop{
+    background-position: top;
+}
+.ComponentBg.ComponentBg--cover.ComponentBgImg.anim.anim--zoomout.lazyloaded{
+    background-position: center;
+}
+.ComponentBgContainer{
+    background-color: @morado;
+}
+.ComponentBg.lazyloaded {
+    opacity: 0.7;
+}
+.TextComponent--center{
+    font-family: 'Libre Franklin', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 16px !important;
+}
+ul.TextComponent--center {
+    font-family: 'Ibarra Real Nova', serif !important;
+    list-style: none;
+    line-height: 28px;
+    h3 {
+        font-family: sans-serif;
+        margin-top: 20px;
+    }
+}
+.TextComponent--left {
+    padding-right: 15vw;
+    font-size: 30px;
+    line-height: 48px;
+    left: 0;
+    margin-left: 100px;
+    padding-right: 250px;
+}
+
+.TextComponent--lateral {
+    font-family: sans-serif;
+    font-weight: 800;
+    text-align: center;
+    margin: 20px 20vw;
+    font-size: 22px;
+    line-height: 38px;
+}
+.TextComponent--audio {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    margin-left: -60px;
+}
+.intro{
+        background: @morado !important;
+    }
+.TextComponent--intro {
+    font-size: 24px;
+    margin: auto 18vw;
+}
+
+.ComponentBgContainer iframe {
+    height: 100vh;
+    width: 100vw;
+}
+
+.ButtonCta {
+    min-height: 3.125em;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 5px 20px;
+    background: transparent;
+    text-decoration: none;
+    transition: all .3s;
+    cursor: pointer;
+    a {
+        z-index: 1;
+        position: absolute;
+        right: 130px;
+        font-family: 'Libre Franklin', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 10px;
+        line-height: 20px;
+        max-width: 13.75em;
+    }
+}
+b.primera {
+    font-family: 'Libre Franklin', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    font-size: 14px;
+}
+
+.playervideo p {
+    color: #fff;
+    margin: 100px 25vw;
+    text-align: center;
+}
+
+
+/* hacks estilos base <<< FIN */
+
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span{
+    background: #fff;
+}
+#fp-nav {
+    top: 40vh;
+    height: 90vh;
+}
+#fp-nav ul li, .fp-slidesNav ul li {
+    margin: 8vh 0;
+}
+/* hacks fullpage 
+#fp-nav > ul > li > a > span:nth-child(2) {
+    background: transparent;
+    font-size: 40px;;
+    color: @blanco;
+    &:after{
+        content: '*';
+    }
+}
+
+#fp-nav ul li, .fp-slidesNav ul li {
+    display: block;
+    width: 14px;
+    height: 13px;
+    margin: 7vh 0px;
+    position: relative;
+}
+*/
+
+#home {
+    background-image: url('../img/museo-virtual---home-final-2.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.section{
+    video {
+        height: 100%;
+        width: auto;
+    }
+    .playervideo video {
+        height: 40vh;
+        width: auto;
+    }
+    .btn{
+        display: inline-block;
+        height: 110px;
+        width: 160px;
+        position: absolute;
+        background-image: url('../img/flecha-derecha.svg');
+        font-size: 0;
+        background-position: 40px top;
+        background-size: 16px auto;
+        background-repeat: no-repeat;
+        right: 10vw;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        &:hover{
+            background-position: right top; 
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        .ButtonComponent--historia {
+            z-index: 1;
+            font-family: 'Libre Franklin', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 24px;
+            border-radius: 10px;
+            letter-spacing: 1px;
+            border: transparent;
+            position: absolute;
+            bottom: 0;
+            height: 115px;
+            padding: 40px 0 0 20px;
+        }
+
+        
+    }
+    div.cover {
+        z-index: 0;
+        position: fixed; 
+        top: 0%; //-50%; 
+        left: 0%; //-50%; 
+        width: 100%; //200%; 
+        height: 100%; //200%;
+        animation-play-state: running;
+        img {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0; 
+            margin: auto; 
+            min-width: 100%; //50%;
+            min-height: 100%; //50%;
+            overflow-x: hidden;
+        }   
+    }
+    .txt {
+        margin-left: 15vw;
+        z-index: 1;
+        position: relative;
+        p.subtitle {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 3em;
+            color: #fff;
+            margin: 0.2em 0 0 0;
+        }
+        &.intro{
+            position: absolute;
+            top: 30vh;
+            margin-left: 10vw;
+        }
+    }
+}
+.bt-center {
+    position: relative;
+    text-align: center;
+    top: 290px;
+    svg {
+        width: 20px;
+        margin-top: 20px;
+    }
+    a {
+        color: #fff;
+        font-family: 'Libre Franklin', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 14px;
+        span {
+            display: block;
+        }
+    }
+    &::after {
+        color: #fff;
+        position: relative;
+    }
+}
+/* estilos generales <<< FIN */
+
+/* >>> INICIO hacks para los estilos del plugin fullpage */
+.fp-controlArrow {
+    &.fp-prev {
+        left: 10%;
+        display: none;
+    }
+    &.fp-next {
+        right: 10%;
+    }
+}
+
+/* hacks para los estilos del plugin fullpage <<< FIN */
+
+/* INICIO lazzy */
+.lazyload,
+.lazyloading {
+	opacity: 0;
+}
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 1000ms;
+}
+/* lazzy <<< FIN */
+
+/* >>> INICIO menu tipo push */
+
+#nav-info{
+    .logomenu {
+        width: 270px;
+        height: 180px;
+        background-image: url('../img/header-menu.png');
+        background-size: cover;
+        margin: 40px 0 20px 55px;
+        &:hover{
+            background-image: url('../img/header-menu-hover.png');
+        }
+    }
+    .logomenu_txt {
+        font-size: xx-large;
+        font-weight: lighter;
+        margin: 50px 0 20px 58px;
+        text-indent: 0;
+        line-height: 41px;
+        color: @negro;
+    }
+}
+.pushmenu {
+    background: #f2efe6;
+    font-family: Arial, Helvetics, sans-serif;
+    width: 340px;
+    height: 100%;
+    top: 0;
+    z-index: 100;
+    opacity: 1;
+    position: fixed;
+    a {
+        display: block;
+        color: #000;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 12px;
+            text-indent: 60px;
+            line-height: 28px;
+        }
+    span {
+        line-height:50%;font-size:60%;text-indent :11em;
+    }
+}
+.pushmenu h3 {
+color: black;
+font-size: 14px;
+font-weight: bold;
+padding: 35px 20px;
+margin: 0;
+background: #f2efe6;
+height: 16px;
+}
+
+.pushmenu a:hover {
+color: #ae8ec2;
+}
+.pushmenu a:active {
+color: #ae8ec2;
+
+}
+.pushmenu-left {
+left: -340px;
+}
+.pushmenu-left.pushmenu-open {
+left: 0;
+}
+
+.pushmenu-left.pushmenu-close {
+height:0; 
+    padding-top:0;
+left: 340;
+}
+.pushmenu-push {
+overflow-x: hidden;
+overflow-y: auto;
+position: relative;
+left: 0;
+}
+.pushmenu-push-toright {
+left: 340px;
+}
+.pushmenu,
+.pushmenu-push {
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+#nav_list {
+background: url(../img/icono-menu.svg) no-repeat left top;
+cursor: pointer;
+height: 27px;
+width: 33px;
+text-indent: -99999em;
+float: left;
+    &.active{
+        background: url(../img/icono-menu-negro.svg) no-repeat left top;
+    }
+}
+nav-list.active {
+background-position: -33px top;
+}
+.buttonset {
+background: transparent;
+height: auto;
+padding: 10px;
+position: absolute;
+z-index: 101;
+}
+#nav_list_close {
+background: url(../img/icon_nav_black.png) no-repeat left top;
+cursor: pointer;
+height: 50px;
+width: 35px;
+text-indent:-99999em;
+float: left;
+}
+nav-list_close.active {
+background-position: -33px top;
+}
+
+nav-list.active {
+background-position: -33px top;
+}
+
+.titulo-nav{
+font-family: 'Libre Franklin', sans-serif !important;
+text-align: left;
+margin-left: 55px;
+color:#2c2327;
+margin-top: 60px;
+    text-indent: 0;
+    font-size: xx-large;
+    line-height: 41px;
+
+}
+  
+/* menu tipo push <<< FIN */
+
+/* >>> INICIO PARALLAX */
+
+/* PARALLAX  <<< FIN */  
+
+/* >>> INICIO historia lateral */
+
+.pushmenu-push-right {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    right: 0;
+}
+
+#laterales_arauca{
+    .story{
+        &.profundizacion {
+            background-image: url('../arauca/foto/museo-flip-arauca-02.jpg');
+        }
+        &.violencia {
+            background-image: url('../arauca/foto/museo-flip-arauca-03.jpg');
+        }
+        &.efrain {
+            background-image: url('../arauca/foto/museo-flip-arauca-04.jpg');
+        }
+        &.desplazamiento {
+            background-image: url('../arauca/foto/museo-flip-arauca-05.jpg');
+        }
+        &.corredor {
+            background-image: url('../arauca/foto/museo-flip-arauca-06.jpg');
+        }
+        &.lezama {
+            background-image: url('../arauca/foto/museo-flip-arauca-fondo05.jpg');
+        }
+    }
+}
+#laterales_caqueta{
+    .story{
+        &.profundizacion {
+            background-image: url('../caqueta/foto/museo-flip-caqueta-01.jpg');
+        }
+        &.violencia {
+            background-image: url('../caqueta/foto/museo-flip-caqueta-02.jpg');
+        }
+        &.radio {
+            background-image: url('../caqueta/foto/museo-flip-caqueta-03.gif');
+        }
+        &.paujil {
+            background-image: url('../caqueta/foto/museo-flip-caqueta-fondo04.jpg');
+        }
+        &.debate {
+            background-image: url('../caqueta/foto/museo-flip-caqueta-05.jpg');
+        }
+        &.produccion {
+            background-image: url('../caqueta/foto/museo-flip-caqueta-fondo07.jpg');
+        }
+        &.telegordo {
+            background-image: url('../caqueta/foto/museo-flip-caqueta-07.jpg');
+        }  
+    }
+}
+#laterales_cordoba{
+    .story{
+        &.profundizacion {
+            background-image: url('../cordoba/foto/museo-flip-cordoba-01.jpg');
+        }
+        &.folletos {
+            background-image: url('../cordoba/foto/museo-flip-cordoba-02.jpg');
+        }
+        &.violencia {
+            background-image: url('../cordoba/foto/museo-flip-cordoba-fondo04.jpg');
+        }
+        &.costeno {
+            background-image: url('../cordoba/foto/museo-flip-cordoba-04.jpg');
+        }
+        &.lecturas {
+            background-image: url('../cordoba/foto/museo-flip-cordoba-05.jpg');
+        }
+        &.jorge {
+            background-image: url('../cordoba/foto/museo-flip-cordoba-06.jpg');
+        }
+        &.monteria {
+            background-image: url('../cordoba/foto/museo-flip-cordoba-03.jpg');
+        }
+    }
+}
+section{
+
+    &.story{
+        background: @morado;
+        width: 100%;
+        opacity: 1;
+        height: 100%;
+        top: 0;
+        right: -100vw;
+        z-index: 1000;
+        position:fixed;
+        transition-property: position;
+        -webkit-transition: 2s;
+        transition: 2s;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        }
+    
+        .titulo {
+            position: absolute;
+            -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            color: #fff;
+            left: -180px;
+            height: 46px;
+            width: 500px;
+            top: 30%;
+            h2 {
+                font-size: 13px;
+                font-family: 'Libre Franklin', sans-serif;
+                text-transform: uppercase;
+                font-weight: 700;
+                letter-spacing: 1px;
+
+            }
+        }
+        
+    
+        iframe {
+            width: 90vw;
+            float: right;
+        }
+    
+        .cerrar-lateral {
+            width: 10vw;
+            height: 100vh;
+            float: left;
+            margin-left: 0px;
+            .boton{
+                background-color: transparent;
+                text-align: center;
+                padding: 10px;
+                background: url('../img/flecha-derecha.svg');
+                background-size: 20px;
+                height: 40px;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 10px;
+                margin: 15px;
+                transform: rotate(180deg);  
+                -moz-transform: rotate(180deg);  
+                -webkit-transform: rotate(180deg);
+            }
+        }
+    
+
+    .story-right {
+        right: -340px;
+    }
+    
+    &.story-open {
+        right: 0;
+    }
+    
+    .story-push {
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: relative;
+    }
+    
+    .story-push-toright {
+        right: 340px;
+    }
+    
+    .story, .story-push {
+        transition-property: position;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;  
+    }
+}
+
+/* historia lateral <<< FIN */
+
+
+/* player de audio */
+@import url('../css/plugins/plyr.css');
+
+.plyr {
+    width: 50vw;
+}
+.plyr--audio .plyr__controls {
+    background: transparent;
+}
+#plList {
+    color: @blanco;
+    margin-top: 30px;
+}
+#plList li {
+    list-style: none;
+    line-height: 30px;
+}
+.plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
+    background: @blanco;
+    color: @morado;
+}
+.plyr--full-ui input[type=range] {
+    color: @blanco;
+}
+
+/* RESPONSIVE */
+@import url('css-breakpoint-mixins.less');
