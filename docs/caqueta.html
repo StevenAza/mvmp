@@ -315,7 +315,6 @@
     $storyRight3 = $('.story.radio');
     $boton3 = $('#btn_radio');		
     $boton3.click(function() {
-        console.log('Click en '+ $boton3.text());
         $(this).toggleClass('active');
         $storyRight3.toggleClass('story-open');
     });
@@ -325,8 +324,6 @@
         $(this).toggleClass('active');
         $storyRight4.toggleClass('story-open');
         document.getElementById("video_2").pause();
-        console.log('pausa pues!!!');
-
     });
     $storyRight5 = $('.story.debate');
     $boton5 = $('#btn_debate');		
@@ -350,7 +347,6 @@
     function cerrarLateral(e) {
         selector = "section." + e;
         ancla = "#" + e;
-        console.log(selector);
         $(selector).toggleClass('story-open');
         fullpage_api.destroy('#fullpage-interna');
         /* funciones plugin fullpage */
