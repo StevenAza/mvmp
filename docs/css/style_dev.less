@@ -79,3 +79,43 @@ div[class^="col-"]{
     }
 }
 
+#inicio {
+    #fp-nav{
+        display: none;
+    }
+    .section{
+        #home{
+            background-image: unset !important;
+        }
+        .ComponentBg{
+            opacity: 1.0 !important;
+            background-position: right; /* pasar a generales */
+        }
+        #overlay {
+            background: url('../cordoba/foto/museo-flip-cordoba-introejemplo.jpg') no-repeat center center;
+            background-size: initial;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            bottom: 0;
+            top: 10vh;
+            text-align: center;
+            .minusculas{
+                font-family: 'Ibarra Real Nova';
+                color: #d1d1d1;
+                font-size: 3em;
+            }
+            .mayusculas{
+                font-family: 'Libre Franklin', sans-serif;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+                font-size: 8em;
+                line-height: 1.6em;
+            }
+        }
+    }
+}

@@ -11,19 +11,32 @@
 	<meta name="Resource-type" content="Document" />
 
     <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
-    <link rel="stylesheet/css" type="text/less" href="css/style.less">
+    <link rel="stylesheet/css" type="text/less" href="css/style_dev.less">
     <script src="js/less.js" type="text/javascript"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/actions.js"></script>
 
 
 </head>
-<body class="pushmenu-push">
+<body class="pushmenu-push" id="inicio">
 	<nav id="nav-info" class="pushmenu pushmenu-left"></nav>
 	<section class="buttonset">
 		<div id="nav_list">Menu</div>
 	</section>
-	<a href="caqueta.html"><div id="home"></div></a>
+	<div id="fullpage">
+		<div class="section" >
+			<div class="ComponentBg ComponentBg--cover ComponentBgImg lazyloaded" style="background-image: url('/img/museo-flip-home-a-01.jpg'); animation-play-state: running;"></div>
+			<div id="overlay">
+				<div class="minusculas">Museo</div>
+				<div class="mayusculas">Memorias</div>
+				<div class="minusculas">del</div>
+				<div class="mayusculas">Periodismo</div>
+				<div class="minusculas">en</div>
+				<div class="mayusculas">Colombia</div>
+			</div>
+		</div>
+	</div>
 
+	<script type="text/javascript" src="js/fullpage.js"></script>
 </body>
 </html>
