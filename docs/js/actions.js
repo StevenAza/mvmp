@@ -1,3 +1,4 @@
+var testLateral = false;
 $(document).ready(function(){
     /* menu principal */
     var url_rel = 'http://127.0.0.1:8080/';
@@ -22,14 +23,19 @@ $(document).ready(function(){
         navigation: true,
         navigationPosition: 'right'
     });
-
-
-    $( ".cerrar-lateral").click(function() {
-        cerrarLateral('2');
-    });
-
-
+    $(".cerrar-lateral").click(function() {
+        console.log(testLateral);
+        if (testLateral == true){   
+            cerrarLateral('2')
+            }
+        }); 
 });
+
+
+
+
+
+
 
 $.fn.isOutScreen = function(){
     var win = $(window);
