@@ -68,7 +68,35 @@ $(document).ready(function(){
             window.location = '#1';
         }, 2000); 
     });
+
+    $storyRight4 = $('.story.lat_4');
+    $boton4 = $('#btn_4');		
+    $boton4.click(function() {
+        $(this).toggleClass('active');
+        $storyRight4.toggleClass('story-open');
+        setTimeout(function(){
+            fullpage_api.destroy('#fullpage');
+            /* funciones plugin fullpage-interna */
+            var myFullpage = new fullpage('#fullpage-interna-lat_4', {
+                navigation: true,
+                navigationPosition: 'right',
+                afterRender: function(){
+                    testLateral = true;
+                },
+            });
+            $('#fullpage-interna-lat_4').toggleClass('hide');
+            window.location = '#1';
+        }, 2000); 
+    });
     /* fin FULLPAGE HISTORIAS LATERALES */
+
+
+    /* inicio AUDIOS CAQUETA > LUIS PERALTA */
+    const player_uno = new Plyr('#audio_uno', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
+    const player_dos = new Plyr('#audio_dos', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
+    const player_tres = new Plyr('#audio_tres', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
+    const player_cuatro = new Plyr('#audio_cuatro', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
+
 
 });
 
@@ -105,3 +133,7 @@ $(document).keydown(function (tecla) {
 	}
 });
 /* fin NAVEGACIÓN POR TECLADO */
+
+
+
+

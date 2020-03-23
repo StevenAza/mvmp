@@ -16,6 +16,8 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/actions.js"></script>
     
+    <script src="js/plugins/html5media.min.js"></script>
+    <script src="js/plugins/plyr.min.js"></script>
 
 </head>
 <body class="pushmenu-push">  
@@ -85,7 +87,7 @@
             </div>
         </div>
         <div class="btn">
-            <a id="btn_radio" class="ButtonCta ButtonCta--icon ButtonComponent--historia"><i class="zmdi zmdi-play-circle"></i>Luis Peralta</a>
+            <a id="btn_4" class="ButtonCta ButtonCta--icon ButtonComponent--historia"><i class="zmdi zmdi-play-circle"></i>Luis Peralta</a>
         </div>
     </div>
     <div class="section" id="section4">
@@ -187,7 +189,7 @@
 
 <div id="laterales_caqueta">
     <section class="story lat_2">
-        <div class="cerrar-lateral">
+        <div class="cerrar-lateral" onclick="cerrarLateral('2')">
             <div class="titulo"><h2>Conflicto armado en Caquetá</h2></div>
             <div class="bg lat_2"></div>
             <div class="boton"></div>
@@ -233,7 +235,7 @@
             </div>
     </section>
     <section class="story lat_3">
-        <div class="cerrar-lateral">
+        <div class="cerrar-lateral" onclick="cerrarLateral('3')">
             <div class="titulo"><h2>Violencia en los medios</h2></div>
             <div class="bg lat_3"></div>
             <div class="boton"></div>
@@ -284,14 +286,71 @@
            
             </div>
     </section>
-    <!--
-    <section class="story radio" onclick="cerrarLateral('radio')">
-        <div class="titulo"><h2>Luis Peralta en el informativo Linda Digital Stereo</h2></div>
-        <div class="cerrar-lateral">
+    
+    <section class="story lat_4" >
+        <div class="cerrar-lateral" onclick="cerrarLateral('4')">
+            <div class="titulo"><h2>Luis Peralta en el informativo Linda Digital Stereo</h2></div>
+            <div class="bg lat_4"></div>
             <div class="boton"></div>
         </div>
-        <iframe src="./linda_stereo.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen class="lazyload"></iframe>
+        <div id="fullpage-interna-lat_4" class="hide">
+            <div class="section" id="section0">
+                <div class="ComponentBgContainer">
+                    <div class="ComponentBg ComponentBg--cover ComponentBg--overlay ComponentBgContainer lazyloaded">
+                        <div class="ComponentBg ComponentBg--cover ComponentBgImg lazyloaded" style="background-image: url('caqueta/foto/museo-flip-caqueta-tira2-01.jpg');"></div>
+                    </div>
+                    <div class="TextWrapper">
+                        <h2 class="TextComponent TextComponent--lateral animated animated-slow fadeInUp" style="animation-delay: 0.75s;">Después de denunciar varios hechos de corrupción, el 14 de febrero de 2015, en la entrada de la emisora, fue asesinado Luis Peralta. Su esposa que resultó herida en los hechos, fallecería meses después. </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section1">
+                <div class="ComponentBgContainer">
+                    <div class="ComponentBg ComponentBg--cover ComponentBg--overlay ComponentBgContainer lazyloaded">
+                        <div class="ComponentBg ComponentBg--cover ComponentBgImg lazyloaded" style="background-image: url('caqueta/foto/museo-flip-caqueta-tira2-02.jpg');"></div>
+                    </div>
+                    <div class="TextWrapper">
+                        <h2 class="TextComponent TextComponent--lateral animated animated-slow fadeInUp" style="animation-delay: 0.75s;">“El impacto fue brutal, mi papá era la cabeza de toda la empresa, no solo manejaba los temas informativos, también estaba metido en todo porque era un hombre de radio, enamorado de su profesión. Perderlo de la noche a la mañana fue algo terrible”: Luis Peralta, hijo.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section2">
+                <div class="ComponentBgContainer">
+                    <div class="ComponentBg ComponentBg--cover ComponentBg--overlay ComponentBgContainer lazyloaded">
+                        <div class="ComponentBg ComponentBg--cover ComponentBgImg lazyloaded" style="background-image: url('caqueta/foto/museo-flip-caqueta-tira2-03.jpg');"></div>
+                    </div>
+                    <div class="TextWrapper">
+                        <h2 class="TextComponent TextComponent--lateral animated animated-slow fadeInUp" style="text-align:center; animation-delay: 0.75s;">Linda Stereo es una emisora comercial que se escucha no solo en El Doncello sino en los municipios cercanos. Pese al asesinato de su director, logró seguir al aire, pero de una manera más sigilosa.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section3">
+                <div class="ComponentBgContainer">
+                    <div class="ComponentBg ComponentBg--cover ComponentBg--overlay ComponentBgContainer lazyloaded">
+                        <video loop id="video_uno" data-autoplay>
+                            <source data-src="caqueta/video/museo-flip-caqueta-tira2-04.mp4" type="video/mp4">
+                          </video>     
+                     </div>
+                     <span class="TextComponent--audio">Luis Peralta en el Informativo Linda digital Stereo</span>
+                    <audio id="audio_uno" playsinline>
+                        <source src="caqueta/audio/Luis Peralta en el Informativo Linda Digital Stereo 1.mp3" type="audio/mp3">
+                    </audio>
+                    <audio id="audio_dos" playsinline>
+                        <source src="caqueta/audio/Luis Peralta en el Informativo Linda Digital Stereo 2.mp3" type="audio/mp3">
+                    </audio>
+                    <audio id="audio_tres" playsinline>
+                        <source src="caqueta/audio/Luis Peralta en el Informativo Linda Digital Stereo 3.mp3" type="audio/mp3">
+                    </audio>
+                    <audio id="audio_cuatro" playsinline>
+                        <source src="caqueta/audio/Luis Peralta en el Informativo Linda Digital Stereo 4.mp3" type="audio/mp3">
+                    </audio>
+                </div>
+            </div>
+          
+        </div>
     </section>
+    <!--
     <section class="story paujil" onclick="cerrarLateral('paujil')">
         <div class="titulo"><h2>Paujil Stereo</h2></div>
         <div class="cerrar-lateral">
