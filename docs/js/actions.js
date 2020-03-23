@@ -20,8 +20,7 @@ $(document).ready(function(){
         navigation: true,
         navigationPosition: 'right'
     });
-    $(".cerrar-lateral").click(function() {
-        debugger;
+    $(".cerrar-lateral").click(function() {        
         var valorregreso = this.lastElementChild.attributes[1].value;
         if (testLateral == true){   
             cerrarLateral(valorregreso);
@@ -35,11 +34,7 @@ $(document).ready(function(){
     /* fin FULLPAGE HISTORIAS LATERALES */
 
 
-    /* inicio AUDIOS CAQUETA > LUIS PERALTA */
-    const player_uno = new Plyr('#audio_uno', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
-    const player_dos = new Plyr('#audio_dos', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
-    const player_tres = new Plyr('#audio_tres', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
-    const player_cuatro = new Plyr('#audio_cuatro', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
+    
 
     asignateValueButton();
 
@@ -49,7 +44,7 @@ $(document).ready(function(){
 
 
 function asignateValueButton() {
-    debugger;
+    
     var buttons = $('.fp-section.fp-table .btn a');
     buttons.attr("data-page", "");
     buttons.attr("ontouchstart", "clicAPage(this)");
@@ -64,7 +59,7 @@ function asignateValueButton() {
     }
 
     for (var i = 0; i < regreso.length; i++) {
-        debugger;
+        
         regreso[i].attributes[1].value = i + 2;
     }
 
@@ -92,10 +87,36 @@ function clicAPage(control) {
 	
 }
 
+var positionpage;
+function ingresoInternas() {
+	if (typeof ($('.fp-section.fp-table.active .btn a')) != "undefined") {
+       var vinculoboton =  $('.fp-section.fp-table.active .btn a');
+        positionpage = $('.fp-section.fp-table.active .btn a')[0].attributes[2].value;
+        
+		var elementoPadre = $('#fullpage-interna-lat_'+ positionpage);
+        var objcontent = elementoPadre[0].parentElement;
+        $(objcontent).toggleClass('story-open');        
+        $(vinculoboton).toggleClass('active');   
+        setTimeout(function(){
+            fullpage_api.destroy('#fullpage');        
+            var myFullpage = new fullpage('#fullpage-interna-lat_'+ positionpage, {
+                navigation: true,
+                navigationPosition: 'right',
+                afterRender: function(){
+                    testLateral = true;
+                },
+            });
+                    
+            $('#fullpage-interna-lat_'+ positionpage).toggleClass('hide');
+            window.location = '#1';
+        }, 2000); 
+	}
+}
+
 /* inicio CERRAR LATERALES */
 var numeroAncla;
 function cerrarLateral(e) {
-    debugger;
+    
     numeroAncla = e;
     var testLateral = false;
     var selector = "section.lat_" + e;
@@ -115,12 +136,12 @@ function cerrarLateral(e) {
 
 /* inicio NAVEGACIÓN POR TECLADO */
 /* Ingrid ¿es posible agregar funcionalidad por teclado en esta estructura? */
-$(document).keydown(function (tecla) {
+$(document).keydown(function (tecla) {    
 	if (tecla.keyCode == 39) {
 		ingresoInternas();
 	}
 	if (tecla.keyCode == 37) {
-		clicAPageRegresar();
+        cerrarLateral(positionpage);
 	}
 });
 /* fin NAVEGACIÓN POR TECLADO */
