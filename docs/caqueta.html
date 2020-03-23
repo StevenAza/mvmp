@@ -190,7 +190,7 @@
     <section class="story lat_2">
         <div class="cerrar-lateral">
             <div class="titulo"><h2>Conflicto armado en Caquetá</h2></div>
-            <div class="bg" ></div>
+            <div class="bg"></div>
             <div class="boton"></div>
         </div>
         <div id="fullpage-interna" class="hide">
@@ -237,13 +237,12 @@
         
             </div>
     </section>
-<!--<section class="story violencia" onclick="cerrarLateral('violencia')">
-        <div class="titulo"><h2>Violencia contra medios y periodistas</h2></div>
-        <div class="cerrar-lateral">
-            <div class="boton"></div>
-        </div>
-        <iframe src="./violencia.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen class="lazyload"></iframe>
+    <section class="story lat_3">
+        <div class="titulo"><h2>Violencia en los medios</h2></div>
+        <div class="bg"></div>
+        <div class="boton"></div>    
     </section>
+    <!--
     <section class="story radio" onclick="cerrarLateral('radio')">
         <div class="titulo"><h2>Luis Peralta en el informativo Linda Digital Stereo</h2></div>
         <div class="cerrar-lateral">
@@ -283,30 +282,9 @@
 
 <script type="text/javascript" src="js/fullpage.js"></script>
 <script type="text/javascript">
-    
-    /* historias laterales */
-    $storyRight1 = $('.story.lat_2');
-    $boton1 = $('#btn_2');		
-    $boton1.click(function() {
-        $(this).toggleClass('active');
-        $storyRight1.toggleClass('story-open');
-        setTimeout(function(){
-            fullpage_api.destroy('#fullpage');
-            /* funciones plugin fullpage-interna */
-            var myFullpage = new fullpage('#fullpage-interna', {
-                anchors: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
-                navigation: true,
-                navigationPosition: 'right',
-                afterRender: function(){
-                    testLateral = true;
-                },
-            });
-            $('#fullpage-interna').toggleClass('hide');
-            window.location = '#1';
-        }, 2000);
-        
-    });
 
+
+    /*
     $storyRight2 = $('.story.violencia');
     $boton2 = $('#btn_violencia');		
     $boton2.click(function() {
@@ -346,6 +324,7 @@
         $(this).toggleClass('active');
         $storyRight7.toggleClass('story-open');
     });
+    */
 
 </script>
 </body>
