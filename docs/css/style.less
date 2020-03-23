@@ -1,5 +1,5 @@
 /*!
- * Estilos museo virtual FLIP 20200208 5:05 PM
+ * Estilos museo virtual FLIP 20200323
  * Juan Carlos Arroyo Sosa jcarroyos@gmail.com
  */
 
@@ -246,9 +246,11 @@ b.primera {
     }
 }
 .bt-center {
-    position: relative;
+    position: absolute;
     text-align: center;
-    top: 290px;
+    top: 80vh;
+    z-index: 1;
+    left: 50vw;
     svg {
         width: 20px;
         margin-top: 20px;
@@ -437,6 +439,63 @@ margin-top: 60px;
 
 /* >>> INICIO PARALLAX */
 
+.introduccion {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#onegif,#dosgif,#tresgif{
+    height: 100vh; 
+    width: 100vw;
+    position: absolute;
+    z-index: 2;
+  }
+  
+div#page_Animation {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: relative; 
+    display: flex;  
+    justify-content: center;
+    flex-flow: column;
+    z-index: 0;
+    &.caqueta{
+        background-image: url('../caqueta/foto/museo-flip-caqueta-intro-01.jpg');
+        .capa{
+            background-position: bottom;
+            height: 100vh; 
+            width: 100vw;
+            position: absolute;
+            z-index: 2;
+            &._1{
+                background-image: url('../caqueta/foto/museo-flip-caqueta-intro-01.gif');
+            }
+            &._2{
+                background-image: url('../caqueta/foto/museo-flip-caqueta-intro-02.gif');
+            }
+            &._3{
+                background-image: url('../caqueta/foto/museo-flip-caqueta-intro-03.gif');
+            }
+            &._4{
+                background-image: url('../caqueta/foto/museo-flip-caqueta-intro-04.gif');
+            }
+            &._5{
+                background-image: url('../caqueta/foto/museo-flip-caqueta-intro-05.gif');
+            }
+        }
+    }
+}
+
+.imganimate{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 /* PARALLAX  <<< FIN */  
 
 /* >>> INICIO historia lateral */
