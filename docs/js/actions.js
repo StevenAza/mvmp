@@ -138,9 +138,12 @@ function cerrarLateral(e) {
 /* Ingrid ¿es posible agregar funcionalidad por teclado en esta estructura? */
 $(document).keydown(function (tecla) {    
 	if (tecla.keyCode == 39) {
-		ingresoInternas();
+        
+        ingresoInternas();
+       
 	}
 	if (tecla.keyCode == 37) {
+      
         cerrarLateral(positionpage);
 	}
 });
