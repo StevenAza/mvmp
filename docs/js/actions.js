@@ -17,13 +17,12 @@ $(document).ready(function(){
 
     /* inicio FULLPAGE HISTORIA CENTRAL */
     var myFullpage = new fullpage('#fullpage', {
-        anchors: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
         navigation: true,
         navigationPosition: 'right'
     });
     $(".cerrar-lateral").click(function() {
         if (testLateral == true){   
-            cerrarLateral('2')
+            cerrarLateral(numeroAncla)
         }
     }); 
     /* fin FULLPAGE HISTORIA CENTRAL */
@@ -38,15 +37,34 @@ $(document).ready(function(){
         setTimeout(function(){
             fullpage_api.destroy('#fullpage');
             /* funciones plugin fullpage-interna */
-            var myFullpage = new fullpage('#fullpage-interna', {
-                anchors: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+            var myFullpage = new fullpage('#fullpage-interna-lat_2', {
                 navigation: true,
                 navigationPosition: 'right',
                 afterRender: function(){
                     testLateral = true;
                 },
             });
-            $('#fullpage-interna').toggleClass('hide');
+            $('#fullpage-interna-lat_2').toggleClass('hide');
+            window.location = '#1';
+        }, 2000); 
+    });
+
+    $storyRight3 = $('.story.lat_3');
+    $boton3 = $('#btn_3');		
+    $boton3.click(function() {
+        $(this).toggleClass('active');
+        $storyRight3.toggleClass('story-open');
+        setTimeout(function(){
+            fullpage_api.destroy('#fullpage');
+            /* funciones plugin fullpage-interna */
+            var myFullpage = new fullpage('#fullpage-interna-lat_3', {
+                navigation: true,
+                navigationPosition: 'right',
+                afterRender: function(){
+                    testLateral = true;
+                },
+            });
+            $('#fullpage-interna-lat_3').toggleClass('hide');
             window.location = '#1';
         }, 2000); 
     });
@@ -57,21 +75,22 @@ $(document).ready(function(){
 
 
 /* inicio CERRAR LATERALES */
+var numeroAncla;
 function cerrarLateral(e) {
-    testLateral = false;
-    selector = "section.lat_" + e;
+    numeroAncla = e;
+    var testLateral = false;
+    var selector = "section.lat_" + e;
+    console.log(selector);
     ancla = "#" + e;
     $(selector).toggleClass('story-open');
-    fullpage_api.destroy('#fullpage-interna');
-    /* funciones plugin fullpage */
+    fullpage_api.destroy('#fullpage-interna-lat_'+e);
+    /* reconstruir fullpage principal */
     var myFullpage = new fullpage('#fullpage', {
-        anchors: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
         navigation: true,
-        navigationPosition: 'right',
-        lazyLoading: true,
+        navigationPosition: 'right'
     });
     window.location = ancla,
-    $('#fullpage-interna').toggleClass('hide')
+    $('#fullpage-interna-lat_'+e).toggleClass('hide');
 }
 /* fin CERRAR LATERALES */
 

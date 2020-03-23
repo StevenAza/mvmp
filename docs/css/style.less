@@ -448,12 +448,6 @@ margin-top: 60px;
     height: 100vh;
 }
 
-#onegif,#dosgif,#tresgif{
-    height: 100vh; 
-    width: 100vw;
-    position: absolute;
-    z-index: 2;
-  }
   
 div#page_Animation {
     width: 100vw;
@@ -486,6 +480,56 @@ div#page_Animation {
             }
             &._5{
                 background-image: url('../caqueta/foto/museo-flip-caqueta-intro-05.gif');
+            }
+        }
+    }
+    &.arauca{
+        background-image: url('../arauca/foto/museo-flip-arauca-intro-01.jpg');
+        .capa{
+            background-position: bottom;
+            height: 100vh; 
+            width: 100vw;
+            position: absolute;
+            z-index: 2;
+            &._1{
+                background-image: url('../arauca/foto/museo-flip-arauca-intro-01.gif');
+            }
+            &._2{
+                background-image: url('../arauca/foto/museo-flip-arauca-intro-02.gif');
+            }
+            &._3{
+                background-image: url('../arauca/foto/museo-flip-arauca-intro-03.gif');
+            }
+            &._4{
+                background-image: url('../arauca/foto/museo-flip-arauca-intro-04.gif');
+            }
+            &._5{
+                background-image: url('../arauca/foto/museo-flip-arauca-intro-05.gif');
+            }
+        }
+    }
+    &.cordoba{
+        background-image: url('../cordoba/foto/museo-flip-cordoba-intro-01.jpg');
+        .capa{
+            background-position: bottom;
+            height: 100vh; 
+            width: 100vw;
+            position: absolute;
+            z-index: 2;
+            &._1{
+                background-image: url('../cordoba/foto/museo-flip-cordoba-intro-01.gif');
+            }
+            &._2{
+                background-image: url('../cordoba/foto/museo-flip-cordoba-intro-02.gif');
+            }
+            &._3{
+                background-image: url('../cordoba/foto/museo-flip-cordoba-intro-03.gif');
+            }
+            &._4{
+                background-image: url('../cordoba/foto/museo-flip-cordoba-intro-04.gif');
+            }
+            &._5{
+                background-image: url('../cordoba/foto/museo-flip-cordoba-intro-05.gif');
             }
         }
     }
@@ -538,8 +582,31 @@ div#page_Animation {
         display: inline-block;
         height: 100vh;
         top: 0;
-        background-image: url('../caqueta/foto/museo-flip-caqueta-01.jpg');
         background-size: cover;
+        &.lat_2{
+            background-image: url('../caqueta/foto/museo-flip-caqueta-01.jpg');
+        }
+        &.lat_3{
+            background-image: url('../caqueta/foto/museo-flip-caqueta-02.jpg');
+        }
+        &.lat_4{
+            background-image: url('../caqueta/foto/museo-flip-caqueta-03.jpg');
+        }
+        &.lat_5{
+            background-image: url('../caqueta/foto/museo-flip-caqueta-04.jpg');
+        }
+        &.lat_6{
+            background-image: url('../caqueta/foto/museo-flip-caqueta-05.jpg');
+        }
+        &.lat_7{
+            background-image: url('../caqueta/foto/museo-flip-caqueta-06.jpg');
+        }
+        &.lat_8{
+            background-image: url('../caqueta/foto/museo-flip-caqueta-07.jpg');
+        }
+        &.lat_9{
+            background-image: url('../caqueta/foto/museo-flip-caqueta-08.jpg');
+        }
     }
     .story{
         /*
@@ -593,7 +660,6 @@ div#page_Animation {
     }
 }
 section{
-
     &.story{
         background: @morado;
         width: 100%;
@@ -610,7 +676,6 @@ section{
         background-repeat: no-repeat;
         background-position: center;
         }
-    
         .titulo {
             position: absolute;
             -ms-transform: rotate(-90deg);
@@ -630,13 +695,6 @@ section{
 
             }
         }
-        
-    
-        iframe {
-            width: 90vw;
-            float: right;
-        }
-    
         .cerrar-lateral {
             width: 10vw;
             height: 100vh;
@@ -661,8 +719,6 @@ section{
                 -webkit-transform: rotate(180deg);
             }
         }
-    
-
     .story-right {
         right: -340px;
     }
