@@ -1,0 +1,81 @@
+@import url('style.less');
+
+@azulclaro: #01b5f4;
+
+div[class^="col-"]{
+    border: 1px solid transparent;
+}
+
+
+#elmuseo{
+    background-color: @morado;
+    font-family: 'Ibarra Real Nova';
+        color: @blanco2;
+    h1{
+        font-family: 'Libre Franklin', sans-serif;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 3px;
+        font-size: 22px;
+        line-height: 1.6em;
+        color: @azulclaro;
+    }
+    h3{
+        font-family: 'Libre Franklin', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 10px;
+        line-height: 1.6em;
+        color: @blanco;
+        font-weight: 600;
+        margin: 20px 0;
+    }
+    .destacado{
+        font-family: 'Libre Franklin', sans-serif;
+        text-transform: uppercase;
+        font-size: 11px;
+        color: white;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    ul{
+        font-size: 14px;
+        margin-left: 0px;
+        li{
+            list-style: none;
+        }
+        
+    }
+    .creditos{
+        padding: 40px 50px;
+        #overlay {
+            background:
+            url('../cordoba/foto/museo-flip-cordoba-introejemplo.jpg')  
+            no-repeat center center;
+            background-size:initial;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            padding: 10px 10px 0 0;
+        }
+        .izq{
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            font-size: 11px;
+            line-height: 1.6em;
+        }
+        .der {
+            margin-top: 30px;
+        }
+        .logos {
+            margin-top: 40px;
+            img {
+                height: 45px;
+                margin: 0 20px 20px 0;
+            }
+        }
+    }
+}
+
