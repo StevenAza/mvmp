@@ -16,6 +16,7 @@
 
     <script src="./js/jquery.min.js"></script>
     <script src="./js/actions.js"></script>
+    
 
 </head>
 <body class="pushmenu-push">  
@@ -180,9 +181,10 @@
 </div>
 
 <div id="laterales_caqueta">
-    <section class="story 2" onclick="cerrarLateral('2')">
+    <section class="story lat_2">
         <div class="titulo"><h2>Conflicto armado en Caquetá</h2></div>
         <div class="cerrar-lateral">
+            <div class="bg" ></div>
             <div class="boton"></div>
         </div>
         <div id="fullpage-interna">
@@ -275,18 +277,9 @@
 
 <script type="text/javascript" src="./js/fullpage.js"></script>
 <script type="text/javascript">
-
-    /* funciones plugin fullpage */
-    var myFullpage = new fullpage('#fullpage', {
-        anchors: ['uno', '2', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez'],
-        sectionsColor: ['#af90c4', '#0a7c87', '#7E8F7C'],
-        navigation: true,
-        navigationPosition: 'right',
-        navigationTooltips: ['Caquetá', 'Historia', 'Violencia', 'Periodistas', 'Emisora', 'Debate', 'Escuela', 'Relatos', 'Censura', 'Créditos']
-    });
     
     /* historias laterales */
-    $storyRight1 = $('.story.2');
+    $storyRight1 = $('.story.lat_2');
     $boton1 = $('#btn_2');		
     $boton1.click(function() {
         $(this).toggleClass('active');
@@ -295,11 +288,9 @@
             fullpage_api.destroy('#fullpage');
             /* funciones plugin fullpage-interna */
             var myFullpage = new fullpage('#fullpage-interna', {
-                anchors: ['uno', '2', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez'],
-                sectionsColor: ['#000000'],
+                anchors: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
                 navigation: true,
                 navigationPosition: 'right',
-                navigationTooltips: ['Caño Limón', 'Los 80', 'Consecuencias']
             });
         }, 2000);
 
@@ -345,21 +336,19 @@
         $storyRight7.toggleClass('story-open');
     });
     function cerrarLateral(e) {
-        selector = "section." + e;
+        selector = "section.lat_" + e;
         ancla = "#" + e;
         $(selector).toggleClass('story-open');
         fullpage_api.destroy('#fullpage-interna');
         /* funciones plugin fullpage */
         var myFullpage = new fullpage('#fullpage', {
-            anchors: ['uno', '2', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez'],
-            sectionsColor: ['#af90c4', '#0a7c87', '#7E8F7C'],
+            anchors: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
             navigation: true,
             navigationPosition: 'right',
-            navigationTooltips: ['Caquetá', 'Historia', 'Violencia', 'Periodistas', 'Emisora', 'Debate', 'Escuela', 'Relatos', 'Censura', 'Créditos']
+            lazyLoading: true,
         });
         window.location = ancla
     }
-
 </script>
 </body>
 </html>

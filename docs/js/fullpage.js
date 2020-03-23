@@ -1093,8 +1093,8 @@
             }
             $('ul', nav)[0].innerHTML = li;
 
-            //centering it vertically
-            css($(SECTION_NAV_SEL), {'margin-top': '-' + ($(SECTION_NAV_SEL)[0].offsetHeight/2) + 'px'});
+            /*centering it vertically
+            css($(SECTION_NAV_SEL), {'margin-top': '-' + ($(SECTION_NAV_SEL)[0].offsetHeight/2) + 'px'});*/
 
             //activating the current active section
 

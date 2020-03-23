@@ -14,6 +14,21 @@ $(document).ready(function(){
         $menuLeft.toggleClass('pushmenu-open');
         $(".buttonset").toggleClass('open');
     });
+
+
+    /* funciones plugin fullpage */
+    var myFullpage = new fullpage('#fullpage', {
+        anchors: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+        navigation: true,
+        navigationPosition: 'right'
+    });
+
+
+    $( ".cerrar-lateral").click(function() {
+        cerrarLateral('2');
+    });
+
+
 });
 
 $.fn.isOutScreen = function(){
@@ -31,6 +46,11 @@ $.fn.isOutScreen = function(){
 };
 
 
+
+
+
+
+/* ingrid */
 $(document).keydown(function (tecla) {
 	if (tecla.keyCode == 39) {
 		ingresoInternas();

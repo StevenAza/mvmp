@@ -129,39 +129,20 @@ b.primera {
     margin: 100px 25vw;
     text-align: center;
 }
-
-
 /* hacks estilos base <<< FIN */
-
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span{
     background: #fff;
 }
 #fp-nav {
-    top: 40vh;
-    height: 90vh;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
 }
 #fp-nav ul li, .fp-slidesNav ul li {
     margin: 8vh 0;
 }
-/* hacks fullpage 
-#fp-nav > ul > li > a > span:nth-child(2) {
-    background: transparent;
-    font-size: 40px;;
-    color: @blanco;
-    &:after{
-        content: '*';
-    }
-}
 
-#fp-nav ul li, .fp-slidesNav ul li {
-    display: block;
-    width: 14px;
-    height: 13px;
-    margin: 7vh 0px;
-    position: relative;
-}
-*/
 
 #home {
     background-image: url('../img/museo-virtual---home-final-2.jpg');
@@ -482,11 +463,24 @@ margin-top: 60px;
         }
     }
 }
+
+
 #laterales_caqueta{
+    .bg {
+        position: absolute;
+        width: 130px;
+        display: inline-block;
+        height: 100vh;
+        top: 0;
+        background-image: url('../caqueta/foto/museo-flip-caqueta-01.jpg');
+        background-size: cover;
+    }
     .story{
-        &.profundizacion {
+        /*
+        &.lat_2 {
             background-image: url('../caqueta/foto/museo-flip-caqueta-01.jpg');
-        }
+            
+        }*/
         &.violencia {
             background-image: url('../caqueta/foto/museo-flip-caqueta-02.jpg');
         }
@@ -560,6 +554,7 @@ section{
             height: 46px;
             width: 500px;
             top: 30%;
+            z-index: 2;
             h2 {
                 font-size: 13px;
                 font-family: 'Libre Franklin', sans-serif;
@@ -581,6 +576,8 @@ section{
             height: 100vh;
             float: left;
             margin-left: 0px;
+            z-index: 1;
+            position: fixed;
             .boton{
                 background-color: transparent;
                 text-align: center;
