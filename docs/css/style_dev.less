@@ -34,7 +34,7 @@ div[class^="col-"]{
         font-family: 'Libre Franklin', sans-serif;
         text-transform: uppercase;
         font-size: 11px;
-        color: white;
+        color: @blanco;
         font-weight: 600;
         letter-spacing: 1px;
     }
@@ -77,6 +77,32 @@ div[class^="col-"]{
             }
         }
     }
+    .contacto{
+        padding: 60px 10px;
+        h1{
+            color: @blanco;
+        }
+        .upper {
+            font-family: 'Libre Franklin', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            line-height: 1.6em;
+            color: @blanco2;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        .bloque {
+            margin: 50px 0;
+            p{
+                font-family: 'Ibarra Real Nova';
+                color: @blanco2;
+                font-size: 20px;
+                letter-spacing: 1px;
+                margin: 0;
+            }
+        }
+    }
 }
 
 #inicio {
@@ -105,7 +131,7 @@ div[class^="col-"]{
             text-align: center;
             .minusculas{
                 font-family: 'Ibarra Real Nova';
-                color: #d1d1d1;
+                color: @blanco2;
                 font-size: 3em;
             }
             .mayusculas{
