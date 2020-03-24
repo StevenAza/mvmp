@@ -99,21 +99,20 @@ function clicAPage(control) {
         validavideos();       
         $('#fullpage-interna-lat_'+ controlA).toggleClass('hide');
         window.location = '#1';
-        var classActive = $('#fullpage-interna-lat_' + controlA)[0].className;
-        debugger;
+        var classActive = $('#fullpage-interna-lat_' + controlA)[0].className;      
 
         if ((classActive == 'fullpage-wrapper fp-notransition') || (classActive =='fullpage-wrapper')) {
-            debugger;
+            
             var palyervideo = $('.fp-section.active.fp-completely .ComponentBgContainer.playervideo');
             if ($(palyervideo).length > 0) {
-                debugger;
+                
                 validavideosplay();
             } else {
                 validavideos();
             }
 
         }
-     //validavideos();      
+           
         
 
     }, 2000); 
@@ -142,11 +141,28 @@ function ingresoInternas() {
                     validavideos();
                 }
             });
-                    
+
+
+            validavideos();       
             $('#fullpage-interna-lat_'+ positionpage).toggleClass('hide');
             window.location = '#1';
+            var classActive = $('#fullpage-interna-lat_' + positionpage)[0].className;          
 
-          // validavideos();
+            if ((classActive == 'fullpage-wrapper fp-notransition') || (classActive == 'fullpage-wrapper')) {
+                
+                var palyervideo = $('.fp-section.active.fp-completely .ComponentBgContainer.playervideo');
+                if ($(palyervideo).length > 0) {
+                    
+                    validavideosplay();
+                } else {
+                    validavideos();
+                }
+
+            }
+                    
+            
+
+         
             
         }, 2000); 
        
