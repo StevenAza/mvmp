@@ -1,4 +1,4 @@
-var testLateral = false;
+
 $(document).ready(function(){
 
     /* inicio MENU PRINCIPAL */
@@ -29,9 +29,10 @@ $(document).ready(function(){
     });
     $(".cerrar-lateral").click(function() {        
         var valorregreso = this.lastElementChild.attributes[1].value;
-        if (testLateral == true){   
-            cerrarLateral(valorregreso);
-        }
+        cerrarLateral(valorregreso);
+       /* if (testLateral == true){   
+            
+        }*/
     }); 
     /* fin FULLPAGE HISTORIA CENTRAL */
 
@@ -47,6 +48,7 @@ $(document).ready(function(){
 
    
 });
+
 
 
 
@@ -71,10 +73,12 @@ function asignateValueButton() {
     }
 
 }
+
+var elementoPadre;
 var controlA;
-function clicAPage(control) {
+function clicAPage(control) { 
     controlA = control.attributes[2].value;  
-    var elementoPadre = $('#fullpage-interna-lat_'+ controlA);
+    elementoPadre = $('#fullpage-interna-lat_'+ controlA);
     var objcontent = elementoPadre[0].parentElement;
     $(objcontent).toggleClass('story-open');        
     $(control).toggleClass('active');   
@@ -83,14 +87,27 @@ function clicAPage(control) {
         var myFullpage = new fullpage('#fullpage-interna-lat_'+ controlA, {
             navigation: true,
             navigationPosition: 'right',
-            afterRender: function(){
+            /*afterRender: function(){
                 testLateral = true;
-            },
+            },*/
         });
                 
         $('#fullpage-interna-lat_'+ controlA).toggleClass('hide');
         window.location = '#1';
+
+        var vidgeneral = $('video, audio');
+        $.each( vidgeneral, function( key, value ) {
+            var objv= value;
+            if((value.hasAttribute('data-keepplaying')== true) && ( typeof value.pause === 'function')){
+                value.pause();
+            }            
+          });          
+        
+
     }, 2000); 
+
+    
+    
 	
 }
 
@@ -109,14 +126,25 @@ function ingresoInternas() {
             var myFullpage = new fullpage('#fullpage-interna-lat_'+ positionpage, {
                 navigation: true,
                 navigationPosition: 'right',
-                afterRender: function(){
+                /*afterRender: function(){
                     testLateral = true;
-                },
+                },*/
             });
                     
             $('#fullpage-interna-lat_'+ positionpage).toggleClass('hide');
             window.location = '#1';
+
+            var vidgeneral = $('video, audio');
+            $.each( vidgeneral, function( key, value ) {
+                var objv= value;
+                if((value.hasAttribute('data-keepplaying')== true) && ( typeof value.pause === 'function')){
+                    value.pause();
+                }             
+              }); 
+            
         }, 2000); 
+       
+       
 	}
 }
 
@@ -125,7 +153,7 @@ var numeroAncla;
 function cerrarLateral(e) {
     
     numeroAncla = e;
-    var testLateral = false;
+   
     var selector = "section.lat_" + e;
     console.log(selector);
     ancla = "#" + e;
@@ -138,6 +166,14 @@ function cerrarLateral(e) {
     });
     window.location = ancla,
     $('#fullpage-interna-lat_'+e).toggleClass('hide');
+
+    var vidgeneral = $('video, audio');
+    $.each( vidgeneral, function( key, value ) {
+        var objv= value;
+        if((value.hasAttribute('data-keepplaying')== true) && ( typeof value.pause === 'function')){
+                value.pause();
+            }             
+      }); 
 }
 /* fin CERRAR LATERALES */
 
