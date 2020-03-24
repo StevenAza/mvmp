@@ -25,7 +25,7 @@
 	</section>
 	<div id="fullpage">
 		<div class="section" >
-			<div class="ComponentBg ComponentBg--cover ComponentBgImg lazyloaded" style="background-image: url('/img/museo-flip-home-a-01.jpg'); animation-play-state: running;"></div>
+			<div id="bg_random" class="ComponentBg ComponentBg--cover ComponentBgImg lazyloaded"></div>
 			<div id="overlay">
 				<div class="minusculas">Museo</div>
 				<div class="mayusculas">Memorias</div>
@@ -38,5 +38,21 @@
 	</div>
 
 	<script type="text/javascript" src="js/fullpage.js"></script>
+	<script type="text/javascript">
+	/* inicio IMAGEN ALEATORIA HOME */
+	var random_images_array = ["museo-flip-home-a-01.jpg", "museo-flip-home-b-01.jpg", "museo-flip-home-c-01.jpg", "museo-flip-home-c-02.jpg"];
+	$(document).ready(function(){
+		getRandomImage(random_images_array);
+	});
+	function getRandomImage(imgAr, path) {
+			path = path || '../img/'; // default path here
+			var num = Math.floor( Math.random() * imgAr.length );
+			var img = imgAr[ num ];
+			var imgStr = "url('" + path + img + "')";
+			$("#bg_random").css("background-image", imgStr)
+		}
+	/* fin IMAGEN ALEATORIA HOME */
+	</script>
+	
 </body>
 </html>
