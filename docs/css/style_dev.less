@@ -118,14 +118,18 @@ div[class^="col-"]{
         .izq{
             z-index: 1;
             left: 50px;
+            position: absolute;
         }
     }
 }
 
 .mapa {
-    height: 100vh;
-    width: 100vw;
+    width: 1500px;
+    height: 1643px;
     z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     .ComponentBg{
         opacity: 1 !important;
     }
@@ -136,8 +140,8 @@ div[class^="col-"]{
         z-index: 1;
         &.arauca{
             position: absolute;
-            left: 756px;
-            top: 292px;
+            left: 795px;
+            top: 310px;
             .punto{
                 background-image: url('../img/arauca-punto.gif');
                 background-size: contain;
