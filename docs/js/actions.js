@@ -2,11 +2,15 @@ var testLateral = false;
 $(document).ready(function(){
 
     /* inicio MENU PRINCIPAL */
-    var menu =  "<a href='index.html'><div class='logomenu_txt'>MEMORIAS DEL PERIODISMO</div>\
-                <span><a href='elmuseo.html'>Sobre el museo</a></span>\
-                <span><a href='arauca.html'>Arauca. Fronteras de la Censura</a></span>\
-                <span><a href='caqueta.html'>Caquetá. Dando la Vuelta al Olvido</a></span>\
-                <span><a href='cordoba.html'>Córdoba. Noticias a contracorriente</a></span>";
+    var menu =  "<a href='index.html'><div class='logomenu_txt'>MEMORIAS DEL PERIODISMO</div></a>\
+                <ul'>\
+                    <li class='serif'><a href='elmuseo.html'>Sobre el museo</a></li>\
+                    <li class='serif'><a href='exposicion.html'>Exposición</a></li>\
+                    <li><a href='arauca.html'>Arauca. Fronteras de la Censura</a></li>\
+                    <li><a href='caqueta.html'>Caquetá. Dando la Vuelta al Olvido</a></li>\
+                    <li><a href='cordoba.html'>Córdoba. Noticias a contracorriente</a></li>\
+                    <li class='serif'><a href='contacto.html'>Contacto</a></li>\
+                </ul>";
     menu_html = $.parseHTML(menu);
     $("#nav-info").append(menu_html);
     $menuLeft = $('.pushmenu-left');

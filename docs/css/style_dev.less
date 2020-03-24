@@ -117,6 +117,8 @@ div[class^="col-"]{
         }
         .izq{
             z-index: 1;
+            position: fixed;
+            left: 50px;
         }
         .mapa {
             height: 100vh;
@@ -126,7 +128,7 @@ div[class^="col-"]{
     }
 }
 
-#inicio {
+.inicio {
     #fp-nav{
         display: none;
     }
@@ -163,6 +165,20 @@ div[class^="col-"]{
                 font-size: 8em;
                 line-height: 1.6em;
             }
+        }
+    }
+}
+
+/* >>> INICIO menu tipo push */
+#nav-info{
+    li{
+        list-style: none;
+        margin: 8px 0 0 20px;
+        &.serif a {
+            font-family: 'Ibarra Real Nova';
+            font-size: 1.3em;
+            font-weight: 100;
+            margin-left: -20px;
         }
     }
 }
