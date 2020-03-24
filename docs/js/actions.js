@@ -25,7 +25,11 @@ $(document).ready(function(){
     /* inicio FULLPAGE HISTORIA CENTRAL */
     var myFullpage = new fullpage('#fullpage', {
         navigation: true,
-        navigationPosition: 'right'
+        navigationPosition: 'right',        
+        onLeave: function(){
+            debugger;
+            validavideos();
+        }
     });
     $(".cerrar-lateral").click(function() {        
         var valorregreso = this.lastElementChild.attributes[1].value;
@@ -76,7 +80,8 @@ function asignateValueButton() {
 
 var elementoPadre;
 var controlA;
-function clicAPage(control) { 
+function clicAPage(control) {
+    debugger; 
     controlA = control.attributes[2].value;  
     elementoPadre = $('#fullpage-interna-lat_'+ controlA);
     var objcontent = elementoPadre[0].parentElement;
@@ -87,21 +92,28 @@ function clicAPage(control) {
         var myFullpage = new fullpage('#fullpage-interna-lat_'+ controlA, {
             navigation: true,
             navigationPosition: 'right',
-            /*afterRender: function(){
-                testLateral = true;
-            },*/
+            onLeave: function(){
+                validavideos();
+            }
         });
-                
+        validavideos();       
         $('#fullpage-interna-lat_'+ controlA).toggleClass('hide');
         window.location = '#1';
+        var classActive = $('#fullpage-interna-lat_' + controlA)[0].className;
+        debugger;
 
-        var vidgeneral = $('video, audio');
-        $.each( vidgeneral, function( key, value ) {
-            var objv= value;
-            if((value.hasAttribute('data-keepplaying')== true) && ( typeof value.pause === 'function')){
-                value.pause();
-            }            
-          });          
+        if ((classActive == 'fullpage-wrapper fp-notransition') || (classActive =='fullpage-wrapper')) {
+            debugger;
+            var palyervideo = $('.fp-section.active.fp-completely .ComponentBgContainer.playervideo');
+            if ($(palyervideo).length > 0) {
+                debugger;
+                validavideosplay();
+            } else {
+                validavideos();
+            }
+
+        }
+     //validavideos();      
         
 
     }, 2000); 
@@ -126,21 +138,15 @@ function ingresoInternas() {
             var myFullpage = new fullpage('#fullpage-interna-lat_'+ positionpage, {
                 navigation: true,
                 navigationPosition: 'right',
-                /*afterRender: function(){
-                    testLateral = true;
-                },*/
+                onLeave: function(){
+                    validavideos();
+                }
             });
                     
             $('#fullpage-interna-lat_'+ positionpage).toggleClass('hide');
             window.location = '#1';
 
-            var vidgeneral = $('video, audio');
-            $.each( vidgeneral, function( key, value ) {
-                var objv= value;
-                if((value.hasAttribute('data-keepplaying')== true) && ( typeof value.pause === 'function')){
-                    value.pause();
-                }             
-              }); 
+          // validavideos();
             
         }, 2000); 
        
@@ -162,16 +168,33 @@ function cerrarLateral(e) {
     /* reconstruir fullpage principal */
     var myFullpage = new fullpage('#fullpage', {
         navigation: true,
-        navigationPosition: 'right'
+        navigationPosition: 'right',
+        onLeave: function(){            
+            validavideos();
+        }
     });
     window.location = ancla,
     $('#fullpage-interna-lat_'+e).toggleClass('hide');
 
+    //validavideos();
+}
+
+function validavideos(){
     var vidgeneral = $('video, audio');
     $.each( vidgeneral, function( key, value ) {
         var objv= value;
         if((value.hasAttribute('data-keepplaying')== true) && ( typeof value.pause === 'function')){
                 value.pause();
+            }             
+      }); 
+}
+
+function validavideosplay(){
+    var vidgeneralplay = $('.fullpage-wrapper video, .fullpage-wrapper audio');
+    $.each( vidgeneralplay, function( key, value ) {
+        var objv= value;
+        if((value.hasAttribute('data-keepplaying')== true) && ( typeof value.pause === 'function')){
+                value.play();
             }             
       }); 
 }
