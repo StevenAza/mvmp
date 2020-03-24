@@ -117,13 +117,43 @@ div[class^="col-"]{
         }
         .izq{
             z-index: 1;
-            position: fixed;
             left: 50px;
         }
-        .mapa {
-            height: 100vh;
-            width: 100vw;
-            z-index: 0;
+    }
+}
+
+.mapa {
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+    .ComponentBg{
+        opacity: 1 !important;
+    }
+    .punto {
+        width: 30px;
+    }
+    .zona{
+        z-index: 1;
+        &.arauca{
+            position: absolute;
+            left: 756px;
+            top: 292px;
+            .punto{
+                background-image: url('../img/arauca-punto.gif');
+                background-size: contain;
+                width: 260px;
+                min-height: 200px;
+                background-repeat: no-repeat;
+                -webkit-transition: background 1s;
+                -moz-transition: background 1s;
+                -o-transition: background 1s;
+                transition: background 1s;
+            }
+            &:hover{
+                .punto{
+                    background-image: url('../img/arauca-zona.gif');
+                }
+            }
         }
     }
 }
@@ -170,6 +200,9 @@ div[class^="col-"]{
 }
 
 /* >>> INICIO menu tipo push */
+.buttonset{
+    position: fixed;
+}
 #nav-info{
     li{
         list-style: none;
