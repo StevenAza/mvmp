@@ -1,6 +1,5 @@
 
-$(document).ready(function(){
-
+$(document).ready(function(){   
     /* inicio MENU PRINCIPAL */
     var menu =  "<a href='index.html'><div class='logomenu_txt'>MEMORIAS DEL PERIODISMO</div></a>\
                 <ul'>\
@@ -224,13 +223,16 @@ $(document).keydown(function (tecla) {
         ingresoInternas();
        
 	}
-	if (tecla.keyCode == 37) {
+	/*if (tecla.keyCode == 37) {
       
-        cerrarLateral(positionpage);
-	}
+        setTimeout(function () {
+            var reg_2 = $('#fullpage-interna-lat_' + positionpage);
+            if ($(reg_2).length > 0) {
+                if (tecla.keyCode == 37) {
+                    cerrarLateral(positionpage);
+                }
+            }
+        }, 2000);
+	}*/   
 });
 /* fin NAVEGACIÓN POR TECLADO */
-
-
-
-
