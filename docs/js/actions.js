@@ -25,8 +25,7 @@ $(document).ready(function(){
     var myFullpage = new fullpage('#fullpage', {
         navigation: true,
         navigationPosition: 'right',        
-        onLeave: function(){
-            debugger;
+        onLeave: function(){            
             validavideos();
         }
     });
@@ -49,7 +48,11 @@ $(document).ready(function(){
 
     asignateValueButton();
 
-   
+    $('#fullpage-interna-lat_'+ positionpage).keydown(function (tecla) {    
+        if (tecla.keyCode == 39) {                    
+            cerrarLateral(positionpage);                   
+        }  
+    });
 });
 
 
@@ -79,8 +82,7 @@ function asignateValueButton() {
 
 var elementoPadre;
 var controlA;
-function clicAPage(control) {
-    debugger; 
+function clicAPage(control) {   
     controlA = control.attributes[2].value;  
     elementoPadre = $('#fullpage-interna-lat_'+ controlA);
     var objcontent = elementoPadre[0].parentElement;
@@ -158,10 +160,7 @@ function ingresoInternas() {
                 }
 
             }
-                    
-            
-
-         
+                
             
         }, 2000); 
        
@@ -217,22 +216,12 @@ function validavideosplay(){
 
 /* inicio NAVEGACIÓN POR TECLADO */
 /* Ingrid ¿es posible agregar funcionalidad por teclado en esta estructura? */
+var tecla;
 $(document).keydown(function (tecla) {    
 	if (tecla.keyCode == 39) {
         
         ingresoInternas();
        
-	}
-	/*if (tecla.keyCode == 37) {
-      
-        setTimeout(function () {
-            var reg_2 = $('#fullpage-interna-lat_' + positionpage);
-            if ($(reg_2).length > 0) {
-                if (tecla.keyCode == 37) {
-                    cerrarLateral(positionpage);
-                }
-            }
-        }, 2000);
-	}*/   
+	}  
 });
 /* fin NAVEGACIÓN POR TECLADO */
