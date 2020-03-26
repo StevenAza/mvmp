@@ -94,6 +94,7 @@ function clicAPage(control) {
         var myFullpage = new fullpage('#fullpage-interna-lat_'+ controlA, {
             navigation: true,
             navigationPosition: 'right',
+            anchors:['#fullpage-interna-lat_'+ controlA +''],            
             onLeave: function(){
                 validavideos();
             }
@@ -182,6 +183,7 @@ function cerrarLateral(e) {
         var myFullpage_1 = new fullpage('#fullpage', {
             navigation: true,
             navigationPosition: 'right',
+            anchors:['#fullpage-interna-lat_'+ e +''],   
             onLeave: function(){            
                 validavideos();
             }
