@@ -187,12 +187,12 @@ function cerrarLateral(e) {
                 validavideos();
             }
         });
-
+        $('#fullpage-interna-lat_'+e).addClass('hide');
         $(selector).removeClass('story-open');
-     }, 3000);
+     }, 2000);
    
-    window.location = ancla,
-    $('#fullpage-interna-lat_'+e).addClass('hide');
+    window.location = ancla;
+   
 
     //validavideos();
 }
