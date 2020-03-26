@@ -174,9 +174,13 @@ function cerrarLateral(e) {
     numeroAncla = e;
    
     var selector = "section.story.lat_" + e;    
-    ancla = "#" + e;    
-   
+    ancla = "#" + e;
+    
+    
+    /* reconstruir fullpage principal */
+
     setTimeout(function(){ 
+        fullpage_api.destroy('#fullpage-interna-lat_'+e);
         var myFullpage = new fullpage('#fullpage', {
             navigation: true,
             navigationPosition: 'right',
@@ -186,13 +190,11 @@ function cerrarLateral(e) {
         });
 
         $(selector).removeClass('story-open');
-        fullpage_api.destroy('#fullpage-interna-lat_'+e);
-        /* reconstruir fullpage principal */
         $('#fullpage-interna-lat_'+e).addClass('hide');
-     }, 2000);
+     }, 3000);
    
     window.location = ancla,
-   
+    
 
     //validavideos();
 }
@@ -227,7 +229,8 @@ $(document).keydown(function (tecla) {
         ingresoInternas();
        
     }  
-    if (tecla.keyCode == 37) {      
+    /*if (tecla.keyCode == 37) {
+      
         setTimeout(function () {
             var reg_2 = $('#fullpage-interna-lat_' + positionpage);
             if ($(reg_2).length > 0) {
@@ -236,6 +239,6 @@ $(document).keydown(function (tecla) {
                 }
             }
         }, 2000);
-	}
+	}*/ 
 });
 /* fin NAVEGACIÓN POR TECLADO */
