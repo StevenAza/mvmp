@@ -86,8 +86,9 @@ function clicAPage(control) {
     controlA = control.attributes[2].value;  
     elementoPadre = $('#fullpage-interna-lat_'+ controlA);
     var objcontent = elementoPadre[0].parentElement;
-    $(objcontent).toggleClass('story-open');        
+    $(objcontent).addClass('story-open');        
     $(control).toggleClass('active');   
+        
     setTimeout(function(){
         fullpage_api.destroy('#fullpage');        
         var myFullpage = new fullpage('#fullpage-interna-lat_'+ controlA, {
@@ -97,11 +98,11 @@ function clicAPage(control) {
                 validavideos();
             }
         });
-        validavideos();       
-        $('#fullpage-interna-lat_'+ controlA).toggleClass('hide');
-        window.location = '#1';
-        var classActive = $('#fullpage-interna-lat_' + controlA)[0].className;      
 
+        validavideos();       
+        $('#fullpage-interna-lat_'+ controlA).removeClass('hide');
+        window.location = '#1';
+        var classActive = $('#fullpage-interna-lat_' + controlA)[0].className;
         if ((classActive == 'fullpage-wrapper fp-notransition') || (classActive =='fullpage-wrapper')) {
             
             var palyervideo = $('.fp-section.active.fp-completely .ComponentBgContainer.playervideo');
@@ -113,8 +114,6 @@ function clicAPage(control) {
             }
 
         }
-           
-        
 
     }, 2000); 
 
@@ -127,12 +126,12 @@ var positionpage;
 function ingresoInternas() {
 	if (typeof ($('.fp-section.fp-table.active .btn a')) != "undefined") {
        var vinculoboton =  $('.fp-section.fp-table.active .btn a');
-        positionpage = $('.fp-section.fp-table.active .btn a')[0].attributes[2].value;
-        
+        positionpage = $('.fp-section.fp-table.active .btn a')[0].attributes[2].value;        
 		var elementoPadre = $('#fullpage-interna-lat_'+ positionpage);
         var objcontent = elementoPadre[0].parentElement;
         $(objcontent).toggleClass('story-open');        
         $(vinculoboton).toggleClass('active');   
+        
         setTimeout(function(){
             fullpage_api.destroy('#fullpage');        
             var myFullpage = new fullpage('#fullpage-interna-lat_'+ positionpage, {
@@ -145,7 +144,7 @@ function ingresoInternas() {
 
 
             validavideos();       
-            $('#fullpage-interna-lat_'+ positionpage).toggleClass('hide');
+            $('#fullpage-interna-lat_'+ positionpage).removeClass('hide');
             window.location = '#1';
             var classActive = $('#fullpage-interna-lat_' + positionpage)[0].className;          
 
@@ -174,10 +173,9 @@ function cerrarLateral(e) {
     
     numeroAncla = e;
    
-    var selector = "section.lat_" + e;
-    console.log(selector);
+    var selector = "section.lat_" + e;    
     ancla = "#" + e;
-    $(selector).toggleClass('story-open');
+    $(selector).removeClass('story-open');
     fullpage_api.destroy('#fullpage-interna-lat_'+e);
     /* reconstruir fullpage principal */
     var myFullpage = new fullpage('#fullpage', {
@@ -188,7 +186,7 @@ function cerrarLateral(e) {
         }
     });
     window.location = ancla,
-    $('#fullpage-interna-lat_'+e).toggleClass('hide');
+    $('#fullpage-interna-lat_'+e).addClass('hide');
 
     //validavideos();
 }
