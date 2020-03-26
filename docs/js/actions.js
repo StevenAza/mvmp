@@ -189,7 +189,7 @@ function cerrarLateral(e) {
         });
 
         $(selector).removeClass('story-open');
-     }, 2000);
+     }, 500);
    
     window.location = ancla,
     $('#fullpage-interna-lat_'+e).addClass('hide');
