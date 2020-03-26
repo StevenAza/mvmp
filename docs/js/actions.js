@@ -191,7 +191,7 @@ function cerrarLateral(e) {
         $('#fullpage-interna-lat_'+e).addClass('hide');
         $(selector).removeClass('story-open');
        
-     }, 1000);
+     }, 2000);
    
     window.location = ancla;
    
