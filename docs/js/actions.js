@@ -175,12 +175,11 @@ function cerrarLateral(e) {
    
     var selector = "section.story.lat_" + e;    
     ancla = "#" + e;
-    
-    fullpage_api.destroy('#fullpage-interna-lat_'+e);
     /* reconstruir fullpage principal */
-
+    fullpage_api.destroy('#fullpage-interna-lat_'+e);
     setTimeout(function(){ 
-        var myFullpage = new fullpage('#fullpage', {
+        
+        var myFullpage_1 = new fullpage('#fullpage', {
             navigation: true,
             navigationPosition: 'right',
             onLeave: function(){            
@@ -189,6 +188,7 @@ function cerrarLateral(e) {
         });
         $('#fullpage-interna-lat_'+e).addClass('hide');
         $(selector).removeClass('story-open');
+       
      }, 2000);
    
     window.location = ancla;
