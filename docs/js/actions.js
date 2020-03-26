@@ -174,11 +174,8 @@ function cerrarLateral(e) {
     numeroAncla = e;
    
     var selector = "section.story.lat_" + e;    
-    ancla = "#" + e;
-    
-    fullpage_api.destroy('#fullpage-interna-lat_'+e);
-    /* reconstruir fullpage principal */
-
+    ancla = "#" + e;    
+   
     setTimeout(function(){ 
         var myFullpage = new fullpage('#fullpage', {
             navigation: true,
@@ -189,10 +186,13 @@ function cerrarLateral(e) {
         });
 
         $(selector).removeClass('story-open');
-     }, 500);
+        fullpage_api.destroy('#fullpage-interna-lat_'+e);
+        /* reconstruir fullpage principal */
+        $('#fullpage-interna-lat_'+e).addClass('hide');
+     }, 2000);
    
     window.location = ancla,
-    $('#fullpage-interna-lat_'+e).addClass('hide');
+   
 
     //validavideos();
 }
