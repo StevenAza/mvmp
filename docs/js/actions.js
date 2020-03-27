@@ -9,7 +9,9 @@ $(document).ready(function(){
                     <li><a href='caqueta.html'>Caquetá. Dando la Vuelta al Olvido</a></li>\
                     <li><a href='cordoba.html'>Córdoba. Noticias a contracorriente</a></li>\
                     <li class='serif'><a href='contacto.html'>Contacto</a></li>\
-                </ul>";
+                </ul>\
+                <div class='logomenu'><img src='../img/logo-flip-b.svg'/></div>\
+                ";
     menu_html = $.parseHTML(menu);
     $("#nav-info").append(menu_html);
     $menuLeft = $('.pushmenu-left');
