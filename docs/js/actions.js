@@ -1,5 +1,6 @@
-
+var myFullpage;
 $(document).ready(function(){   
+    
     /* inicio MENU PRINCIPAL */
     var menu =  "<a href='index.html'><div class='logomenu_txt'>MEMORIAS DEL PERIODISMO</div></a>\
                 <ul'>\
@@ -22,7 +23,7 @@ $(document).ready(function(){
     /* fin MENU PRINCIPAL */
 
     /* inicio FULLPAGE HISTORIA CENTRAL */
-    var myFullpage = new fullpage('#fullpage', {
+        myFullpage = new fullpage('#fullpage', {
         navigation: true,
         navigationPosition: 'right',        
         onLeave: function(){            
@@ -48,11 +49,7 @@ $(document).ready(function(){
 
     asignateValueButton();
 
-    $('#fullpage-interna-lat_'+ positionpage).keydown(function (tecla) {    
-        if (tecla.keyCode == 39) {                    
-            cerrarLateral(positionpage);                   
-        }  
-    });
+   
 });
 
 
@@ -82,27 +79,28 @@ function asignateValueButton() {
 
 var elementoPadre;
 var controlA;
-function clicAPage(control) {   
-    controlA = control.attributes[2].value;  
-    elementoPadre = $('#fullpage-interna-lat_'+ controlA);
+var myFullpagenew;
+function clicAPage(control) {    
+    debugger;
+    controlA = control.attributes[2].value;
+    elementoPadre = $('#fullpage-interna-lat_' + controlA);
     var objcontent = elementoPadre[0].parentElement;
-    $(objcontent).addClass('story-open');        
-    $(control).toggleClass('active');   
-        
-    setTimeout(function(){
-        fullpage_api.destroy('#fullpage');        
-        var myFullpage = new fullpage('#fullpage-interna-lat_'+ controlA, {
-            navigation: true,
-            navigationPosition: 'right',
-            anchors:['#fullpage-interna-lat_'+ controlA +''],            
-            onLeave: function(){
-                validavideos();
-            }
-        });
+    $(objcontent).addClass('story-open');    
+    myFullpage.destroy('#fullpage');
+    myFullpage_new = new fullpage('#fullpage-interna-lat_' + controlA, {
+        navigation: true,
+        navigationPosition: 'right',
+        scrollOverflow:true,
+        anchors: ['#fullpage-interna-lat_' + controlA + ''],
+        onLeave: function () {
+            validavideos();
+        }
+    });
 
-        validavideos();       
-        $('#fullpage-interna-lat_'+ controlA).removeClass('hide');
+    setTimeout(function () {             
+        $('#fullpage-interna-lat_' + controlA).removeClass('hide');
         window.location = '#1';
+        validavideos();
         var classActive = $('#fullpage-interna-lat_' + controlA)[0].className;
         if ((classActive == 'fullpage-wrapper fp-notransition') || (classActive =='fullpage-wrapper')) {
             
@@ -115,38 +113,31 @@ function clicAPage(control) {
             }
 
         }
-
-    }, 2000); 
-
-    
-    
-	
+    }, 2000);
 }
 
 var positionpage;
 function ingresoInternas() {
-	if (typeof ($('.fp-section.fp-table.active .btn a')) != "undefined") {
-       var vinculoboton =  $('.fp-section.fp-table.active .btn a');
-        positionpage = $('.fp-section.fp-table.active .btn a')[0].attributes[2].value;        
-		var elementoPadre = $('#fullpage-interna-lat_'+ positionpage);
+    if (typeof ($('.fp-section.fp-table.active .btn a')) != "undefined") {
+        var vinculoboton = $('.fp-section.fp-table.active .btn a');
+        positionpage = $('.fp-section.fp-table.active .btn a')[0].attributes[2].value;
+        var elementoPadre = $('#fullpage-interna-lat_' + positionpage);
         var objcontent = elementoPadre[0].parentElement;
-        $(objcontent).toggleClass('story-open');        
-        $(vinculoboton).toggleClass('active');   
-        
-        setTimeout(function(){
-            fullpage_api.destroy('#fullpage');        
-            var myFullpage = new fullpage('#fullpage-interna-lat_'+ positionpage, {
-                navigation: true,
-                navigationPosition: 'right',
-                onLeave: function(){
-                    validavideos();
-                }
-            });
+        $(objcontent).toggleClass('story-open');
+        fullpage_api.destroy('#fullpage');
+        var myFullpage = new fullpage('#fullpage-interna-lat_' + positionpage, {
+            navigation: true,
+            navigationPosition: 'right',
+            scrollOverflow:true,
+            anchors:['#fullpage-interna-lat_'+ positionpage +''],  
+            onLeave: function () {
+                validavideos();
+            }
+        });
 
-
-            validavideos();       
-            $('#fullpage-interna-lat_'+ positionpage).removeClass('hide');
-            window.location = '#1';
+        setTimeout(function () {
+            $('#fullpage-interna-lat_' + positionpage).removeClass('hide');
+            validavideos();
             var classActive = $('#fullpage-interna-lat_' + positionpage)[0].className;          
 
             if ((classActive == 'fullpage-wrapper fp-notransition') || (classActive == 'fullpage-wrapper')) {
@@ -160,42 +151,35 @@ function ingresoInternas() {
                 }
 
             }
-                
-            
-        }, 2000); 
-       
-       
-	}
+        }, 2000);
+        validavideos();
+
+    }
 }
 
 /* inicio CERRAR LATERALES */
-var numeroAncla;
+
 function cerrarLateral(e) {
     
-    numeroAncla = e;
-   
     var selector = "section.story.lat_" + e;    
-    ancla = "#" + e;
+   
     /* reconstruir fullpage principal */
-    fullpage_api.destroy('#fullpage-interna-lat_'+e);
-    setTimeout(function(){ 
+    fullpage_api.destroy('#fullpage-interna-lat_'+e);  
         
-        var myFullpage_1 = new fullpage('#fullpage', {
+            myFullpage = new fullpage('#fullpage', {
             navigation: true,
             navigationPosition: 'right',
+            scrollOverflow:true,
             anchors:['#fullpage-interna-lat_'+ e +''],   
             onLeave: function(){            
                 validavideos();
             }
         });
+
+        
         $('#fullpage-interna-lat_'+e).addClass('hide');
         $(selector).removeClass('story-open');
-       
-     }, 2000);
-   
-    window.location = ancla;
-   
-
+        fullpage_api.moveTo(e);
     //validavideos();
 }
 
@@ -229,6 +213,9 @@ $(document).keydown(function (tecla) {
         ingresoInternas();
        
     }  
+   /* if (tecla.keyCode == 37) {       
+        cerrarLateral(positionpage);
+    } */
     
 });
 /* fin NAVEGACIÓN POR TECLADO */
