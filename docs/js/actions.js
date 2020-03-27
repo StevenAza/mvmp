@@ -207,9 +207,9 @@ $(document).keydown(function (tecla) {
         ingresoInternas();
        
     }  
-   /* if (tecla.keyCode == 37) {       
+    if (tecla.keyCode == 37) {       
         cerrarLateral(positionpage);
-    } */
+    } 
     
 });
 /* fin NAVEGACIÓN POR TECLADO */
