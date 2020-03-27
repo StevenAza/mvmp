@@ -4,7 +4,7 @@ Museo virtual Memorias del Periodismo de la Fundación para la Libertad de Prens
 
 ## Front-end
 
-Interfaz basada en el proyecto [Pageable](https://github.com/Mobius1/Pageable).
+Interfaz basada en el proyecto [Fullpage](https://github.com/alvarotrigo/fullPage.js).
 
 ## Back-end
 
