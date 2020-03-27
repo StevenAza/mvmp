@@ -7,7 +7,7 @@ $(document).ready(function(){
                     <li class='serif'><a href='exposicion.html'>Exposición</a></li>\
                     <li><a href='arauca.html'>Arauca. Fronteras de la Censura</a></li>\
                     <li><a href='caqueta.html'>Caquetá. Dando la Vuelta al Olvido</a></li>\
-                    <li><a href='cordoba.html'>Córdoba. Noticias a contracorriente</a></li>\
+                    <li><a href='cordoba.html'>Córdoba. Noticias a Contracorriente</a></li>\
                     <li class='serif'><a href='contacto.html'>Contacto</a></li>\
                 </ul>\
                 <div class='logomenu'><img src='../img/logo-flip-b.svg'/></div>\
