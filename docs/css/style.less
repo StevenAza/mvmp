@@ -175,7 +175,9 @@ b.primera {
     .contentlogo img {
         text-align: center;
         display: block;
-        margin: auto;
+        margin: 30px auto;
+        width: 200px;
+        height: auto;
     }
 }
 
@@ -285,7 +287,7 @@ b.primera {
 .bt-center {
     position: absolute;
     text-align: center;
-    top: 80vh;
+    top: 90vh;
     z-index: 1;
     width: 100%;
     svg {
@@ -355,14 +357,10 @@ b.primera {
         }
     }
     .logomenu {
-        width: 270px;
-        height: 180px;
-        background-image: url('../img/header-menu.png');
-        background-size: cover;
-        margin: 40px 0 20px 55px;
-        &:hover{
-            background-image: url('../img/header-menu-hover.png');
-        }
+        width: 160px;
+        margin: 30px 60px;
+        position: fixed;
+        bottom: 0;
     }
     .logomenu_txt {
         font-size: xx-large;
@@ -1009,6 +1007,13 @@ section{
                 font-size: 20px;
                 letter-spacing: 1px;
                 margin: 0;
+            }
+            a, a:active {
+                color: @blanco;
+                text-decoration: none;;
+            }
+            a:hover{
+                color: @azulclaro;
             }
         }
     }

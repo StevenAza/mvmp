@@ -8,9 +8,11 @@ $(document).ready(function(){
                     <li class='serif'><a href='exposicion.html'>Exposición</a></li>\
                     <li><a href='arauca.html'>Arauca. Fronteras de la Censura</a></li>\
                     <li><a href='caqueta.html'>Caquetá. Dando la Vuelta al Olvido</a></li>\
-                    <li><a href='cordoba.html'>Córdoba. Noticias a contracorriente</a></li>\
+                    <li><a href='cordoba.html'>Córdoba. Noticias a Contracorriente</a></li>\
                     <li class='serif'><a href='contacto.html'>Contacto</a></li>\
-                </ul>";
+                </ul>\
+                <div class='logomenu'><img src='../img/logo-flip-b.svg'/></div>\
+                ";
     menu_html = $.parseHTML(menu);
     $("#nav-info").append(menu_html);
     $menuLeft = $('.pushmenu-left');
@@ -38,13 +40,6 @@ $(document).ready(function(){
         }*/
     }); 
     /* fin FULLPAGE HISTORIA CENTRAL */
-
-    /* inicio FULLPAGE HISTORIAS LATERALES */
-    /* Ingrid ¿esto se puede general en un bucle que cuenta las páginas y sus secciones? */
-    /*--------------------------------------------*/
-    /* fin FULLPAGE HISTORIAS LATERALES */
-
-
     
 
     asignateValueButton();
@@ -205,7 +200,6 @@ function validavideosplay(){
 /* fin CERRAR LATERALES */
 
 /* inicio NAVEGACIÓN POR TECLADO */
-/* Ingrid ¿es posible agregar funcionalidad por teclado en esta estructura? */
 var tecla;
 $(document).keydown(function (tecla) {    
 	if (tecla.keyCode == 39) {
