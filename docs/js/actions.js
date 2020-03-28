@@ -8,11 +8,9 @@ $(document).ready(function(){
                     <li class='serif'><a href='exposicion.html'>Exposición</a></li>\
                     <li><a href='arauca.html'>Arauca. Fronteras de la Censura</a></li>\
                     <li><a href='caqueta.html'>Caquetá. Dando la Vuelta al Olvido</a></li>\
-                    <li><a href='cordoba.html'>Córdoba. Noticias a Contracorriente</a></li>\
+                    <li><a href='cordoba.html'>Córdoba. Noticias a contracorriente</a></li>\
                     <li class='serif'><a href='contacto.html'>Contacto</a></li>\
-                </ul>\
-                <div class='logomenu'><img src='../img/logo-flip-b.svg'/></div>\
-                ";
+                </ul>";
     menu_html = $.parseHTML(menu);
     $("#nav-info").append(menu_html);
     $menuLeft = $('.pushmenu-left');
@@ -40,11 +38,22 @@ $(document).ready(function(){
         }*/
     }); 
     /* fin FULLPAGE HISTORIA CENTRAL */
+
+    /* inicio FULLPAGE HISTORIAS LATERALES */
+    /* Ingrid ¿esto se puede general en un bucle que cuenta las páginas y sus secciones? */
+    /*--------------------------------------------*/
+    /* fin FULLPAGE HISTORIAS LATERALES */
+
+
     
 
     asignateValueButton();
 
-   
+    $('#fullpage-interna-lat_'+ positionpage).keydown(function (tecla) {    
+        if (tecla.keyCode == 39) {                    
+            cerrarLateral(positionpage);                   
+        }  
+    });
 });
 
 
@@ -72,33 +81,29 @@ function asignateValueButton() {
 
 }
 
-var elementoPadre;
+
 var controlA;
-var myFullpagenew;
-function clicAPage(control) {    
-    debugger;
-    controlA = control.attributes[2].value;
-    elementoPadre = $('#fullpage-interna-lat_' + controlA);
-    var objcontent = elementoPadre[0].parentElement;
-    $(objcontent).addClass('story-open');    
-    myFullpage.destroy('#fullpage');
-    myFullpage_new = new fullpage('#fullpage-interna-lat_' + controlA, {
+function clicAPage(control) {   
+    controlA = control.attributes[2].value;  
+    var elementoPadre_1 = $('#fullpage-interna-lat_'+ controlA);
+    var objcontent_1 = elementoPadre_1[0].parentElement;
+    $(objcontent_1).addClass('story-open');        
+    //$(control).toggleClass('active');   
+    fullpage_api.destroy('#fullpage');        
+    var myFullpage_1 = new fullpage('#fullpage-interna-lat_'+ controlA, {
         navigation: true,
         navigationPosition: 'right',
-        scrollOverflow:true,
-        anchors: ['#fullpage-interna-lat_' + controlA + ''],
-        onLeave: function () {
+        anchors:['#fullpage-interna-lat_'+ controlA +''],            
+        onLeave: function(){
             validavideos();
         }
-    });
+    });    
 
-    setTimeout(function () {             
-        $('#fullpage-interna-lat_' + controlA).removeClass('hide');
-        window.location = '#1';
-        validavideos();
+    setTimeout(function(){
+        $('#fullpage-interna-lat_'+ controlA).removeClass('hide');        
+        validavideos();    
         var classActive = $('#fullpage-interna-lat_' + controlA)[0].className;
-        if ((classActive == 'fullpage-wrapper fp-notransition') || (classActive =='fullpage-wrapper')) {
-            
+        if ((classActive == 'fullpage-wrapper fp-notransition') || (classActive =='fullpage-wrapper')) {            
             var palyervideo = $('.fp-section.active.fp-completely .ComponentBgContainer.playervideo');
             if ($(palyervideo).length > 0) {
                 
@@ -108,17 +113,19 @@ function clicAPage(control) {
             }
 
         }
-    }, 2000);
+
+    }, 2000); 
 }
 
 var positionpage;
 function ingresoInternas() {
     if (typeof ($('.fp-section.fp-table.active .btn a')) != "undefined") {
         var vinculoboton = $('.fp-section.fp-table.active .btn a');
+
         positionpage = $('.fp-section.fp-table.active .btn a')[0].attributes[2].value;
         var elementoPadre = $('#fullpage-interna-lat_' + positionpage);
         var objcontent = elementoPadre[0].parentElement;
-        $(objcontent).toggleClass('story-open');
+        $(objcontent).addClass('story-open');
         fullpage_api.destroy('#fullpage');
         var myFullpage = new fullpage('#fullpage-interna-lat_' + positionpage, {
             navigation: true,
@@ -131,7 +138,7 @@ function ingresoInternas() {
         });
 
         setTimeout(function () {
-            $('#fullpage-interna-lat_' + positionpage).removeClass('hide');
+            $('#fullpage-interna-lat_' + positionpage).removeClass('hide');            
             validavideos();
             var classActive = $('#fullpage-interna-lat_' + positionpage)[0].className;          
 
@@ -164,17 +171,16 @@ function cerrarLateral(e) {
             myFullpage = new fullpage('#fullpage', {
             navigation: true,
             navigationPosition: 'right',
-            scrollOverflow:true,
             anchors:['#fullpage-interna-lat_'+ e +''],   
             onLeave: function(){            
                 validavideos();
             }
         });
 
-        
+        fullpage_api.moveTo(e);
         $('#fullpage-interna-lat_'+e).addClass('hide');
         $(selector).removeClass('story-open');
-        fullpage_api.moveTo(e);
+
     //validavideos();
 }
 
@@ -200,6 +206,7 @@ function validavideosplay(){
 /* fin CERRAR LATERALES */
 
 /* inicio NAVEGACIÓN POR TECLADO */
+/* Ingrid ¿es posible agregar funcionalidad por teclado en esta estructura? */
 var tecla;
 $(document).keydown(function (tecla) {    
 	if (tecla.keyCode == 39) {
@@ -207,9 +214,11 @@ $(document).keydown(function (tecla) {
         ingresoInternas();
        
     }  
-    if (tecla.keyCode == 37) {       
-        cerrarLateral(positionpage);
-    } 
+    if (tecla.keyCode == 37) {
+        
+        cerrarLateral(positionpage)
+       
+    }  
     
 });
 /* fin NAVEGACIÓN POR TECLADO */
