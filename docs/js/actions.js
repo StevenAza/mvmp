@@ -84,15 +84,25 @@ function asignateValueButton() {
 
 var controlA;
 var conteoClick = 0;
+var imagenfondo;
+var objencontrado;
 function clicAPage(control) {   
     if (conteoClick == 0) {
+        debugger;
+        imagenfondo = $('#fullpage .fp-section.fp-table.active.fp-completely .fp-tableCell')[0].children[0].firstElementChild;
+        
+        $(imagenfondo).attr('id','objfondo');
+        $('#fullpage .TextWrapper , #fullpage.introduccion , #fullpage .bt-center, #fullpage .ButtonCta').css('display','none');
+        var objcambiofondo = $('#fullpage .section')[9];        
+        objencontrado = $(objcambiofondo).find('.ComponentBgContainer .ComponentBg.ComponentBg--cover.ComponentBg--overlay.ComponentBgContainer.lazyloaded');        
+        objencontrado.hide();
+        $(objcambiofondo).append(imagenfondo);
         
         controlA = control.attributes[2].value;         
-        var elementoPadre_1 = $('#fullpage-interna-lat_'+ controlA);
-        
+        var elementoPadre_1 = $('#fullpage-interna-lat_'+ controlA);        
         var objcontent_1 = elementoPadre_1[0].parentElement;
-        $(objcontent_1).addClass('story-open');        
-        $(control).toggleClass('active');   
+        $(objcontent_1).addClass('story-open');     
+       // $(control).toggleClass('active');   
         fullpage_api.destroy('#fullpage');        
         myFullpage = new fullpage('#fullpage-interna-lat_'+ controlA, {
             navigation: true,
@@ -103,7 +113,7 @@ function clicAPage(control) {
             }
         });    
 
-        setTimeout(function(){
+        setTimeout(function(){             
             $('#fullpage-interna-lat_'+ controlA).removeClass('hide');        
             //validavideos();    
             var classActive = $('#fullpage-interna-lat_' + controlA)[0].className;
@@ -170,6 +180,7 @@ function ingresoInternas() {
 
 function cerrarLateral(e) {
     conteoClick = 0;
+    var conteo = e - 1;
     var selector = "section.story.lat_" + e;    
    
     /* reconstruir fullpage principal */
@@ -187,8 +198,14 @@ function cerrarLateral(e) {
         fullpage_api.silentMoveTo(e);
         $('#fullpage-interna-lat_'+e).addClass('hide');
         $(selector).removeClass('story-open');
-
-    //validavideos();
+        $('#fullpage .TextWrapper , #fullpage.introduccion , #fullpage .bt-center, #fullpage .ButtonCta').css('display','block');
+        debugger;
+        var objcambiofondo_r = $('#fullpage #section'+ conteo);
+        var objencontrado_r = $(objcambiofondo_r).find('.ComponentBgContainer .ComponentBg.ComponentBg--cover.ComponentBg--overlay.ComponentBgContainer.lazyloaded');
+        objencontrado.show();
+        $('#objfondo').remove();
+        $(objcambiofondo_r).append(imagenfondo);
+        //validavideos();
 }
 
 function validavideos(){
