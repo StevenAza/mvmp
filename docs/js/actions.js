@@ -137,6 +137,16 @@ function ingresoInternas() {
     if (typeof ($('.fp-section.fp-table.active .btn a')) != "undefined") {
         var vinculoboton = $('.fp-section.fp-table.active .btn a');
 
+
+        imagenfondo = $('#fullpage .fp-section.fp-table.active.fp-completely .fp-tableCell')[0].children[0].firstElementChild;
+        
+        $(imagenfondo).attr('id','objfondo');
+        $('#fullpage .TextWrapper , #fullpage.introduccion , #fullpage .bt-center, #fullpage .ButtonCta').css('display','none');
+        var objcambiofondo = $('#fullpage .section')[9];        
+        objencontrado = $(objcambiofondo).find('.ComponentBgContainer .ComponentBg.ComponentBg--cover.ComponentBg--overlay.ComponentBgContainer.lazyloaded');        
+        objencontrado.hide();
+        $(objcambiofondo).append(imagenfondo);
+
         positionpage = $('.fp-section.fp-table.active .btn a')[0].attributes[2].value;
         var elementoPadre = $('#fullpage-interna-lat_' + positionpage);
         var objcontent = elementoPadre[0].parentElement;
