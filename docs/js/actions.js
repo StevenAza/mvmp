@@ -6,6 +6,7 @@ $(document).ready(function(){
                 <ul'>\
                     <li class='serif'><a href='elmuseo.html'>Sobre el museo</a></li>\
                     <li class='serif'><a href='exposicion.html'>Exposición</a></li>\
+                    <br><span class='subtitle'><i>Periodismo, memorias desde adentro</i></span>\
                     <li><a href='arauca.html'>Arauca. Fronteras de la Censura</a></li>\
                     <li><a href='caqueta.html'>Caquetá. Dando la Vuelta al Olvido</a></li>\
                     <li><a href='cordoba.html'>Córdoba. Noticias a contracorriente</a></li>\
