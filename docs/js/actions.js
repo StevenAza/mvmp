@@ -88,12 +88,13 @@ var imagenfondo;
 var objencontrado;
 function clicAPage(control) {   
     if (conteoClick == 0) {
-        debugger;
+        
         imagenfondo = $('#fullpage .fp-section.fp-table.active.fp-completely .fp-tableCell')[0].children[0].firstElementChild;
         
         $(imagenfondo).attr('id','objfondo');
         $('#fullpage .TextWrapper , #fullpage.introduccion , #fullpage .bt-center, #fullpage .ButtonCta').css('display','none');
-        var objcambiofondo = $('#fullpage .section')[9];        
+        var idseccion = $('#fullpage .section').length - 1 ;  
+        var objcambiofondo = $('#fullpage .section')[idseccion];      
         objencontrado = $(objcambiofondo).find('.ComponentBgContainer .ComponentBg.ComponentBg--cover.ComponentBg--overlay.ComponentBgContainer.lazyloaded');        
         objencontrado.hide();
         $(objcambiofondo).append(imagenfondo);
@@ -138,11 +139,12 @@ function ingresoInternas() {
         var vinculoboton = $('.fp-section.fp-table.active .btn a');
 
 
-        imagenfondo = $('#fullpage .fp-section.fp-table.active.fp-completely .fp-tableCell')[0].children[0].firstElementChild;
-        
+        imagenfondo = $('#fullpage .fp-section.fp-table.active.fp-completely .fp-tableCell')[0].children[0].firstElementChild;        
         $(imagenfondo).attr('id','objfondo');
         $('#fullpage .TextWrapper , #fullpage.introduccion , #fullpage .bt-center, #fullpage .ButtonCta').css('display','none');
-        var objcambiofondo = $('#fullpage .section')[9];        
+        
+        var idseccion = $('#fullpage .section').length - 1 ;  
+        var objcambiofondo = $('#fullpage .section')[idseccion];        
         objencontrado = $(objcambiofondo).find('.ComponentBgContainer .ComponentBg.ComponentBg--cover.ComponentBg--overlay.ComponentBgContainer.lazyloaded');        
         objencontrado.hide();
         $(objcambiofondo).append(imagenfondo);
@@ -209,7 +211,7 @@ function cerrarLateral(e) {
         $('#fullpage-interna-lat_'+e).addClass('hide');
         $(selector).removeClass('story-open');
         $('#fullpage .TextWrapper , #fullpage.introduccion , #fullpage .bt-center, #fullpage .ButtonCta').css('display','block');
-        debugger;
+        
         var objcambiofondo_r = $('#fullpage #section'+ conteo);
         var objencontrado_r = $(objcambiofondo_r).find('.ComponentBgContainer .ComponentBg.ComponentBg--cover.ComponentBg--overlay.ComponentBgContainer.lazyloaded');
         objencontrado.show();
