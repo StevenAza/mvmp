@@ -1075,19 +1075,56 @@ section{
             /* left: 795px; */
             /* top: 310px; */
             .punto{
-                background-image: url('../img/arauca-punto.gif');
+                background-image: url('../img/boton-mapa-cafe.svg');
                 background-size: contain;
-                width: 260px;
-                min-height: 200px;
+                width: 46px;
+                min-height: 46px;
                 background-repeat: no-repeat;
                 -webkit-transition: background 1s;
                 -moz-transition: background 1s;
                 -o-transition: background 1s;
                 transition: background 1s;
+                .titlezona {                   
+                    width: 147px;
+                    position: relative;
+                    top: -116px;
+                    left: 50px;
+                    font-size: 14px;
+                    opacity: 0;
+                    .nombredepartamento{
+                        font-family: 'Libre Franklin', sans-serif;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        font-size: 14px;
+                        line-height: 1.6em;
+                        color: #2c2327;
+                    }
+                    .mensaje{
+                        font-family: 'Ibarra Real Nova', serif;
+                        font-weight: 400;
+                        letter-spacing: 1px;
+                        font-size: 22px;
+                        line-height: 1.6em;
+                        color: #2c2327;
+                    }
+                    .visitar{
+                        font-family: 'Libre Franklin', sans-serif;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        font-size: 12px;
+                        line-height: 1.6em;
+                        color: #2c2327;
+                    }
+                }
             }
             &:hover{
                 .punto{
-                    background-image: url('../img/arauca-zona.gif');
+                   /* background-image: url('../img/fondo-mapa-hover-arauca.jpg');*/
+                   .titlezona {
+                        opacity: 1;
+                   }
                 }
             }
         }
@@ -1096,19 +1133,56 @@ section{
             /* left: 509px; */
             /* top: 181px; */
             .punto{
-                background-image: url('../img/cordoba-punto.gif');
+                background-image: url('../img/boton-mapa-verde.svg');
                 background-size: contain;
-                width: 260px;
-                min-height: 230px;
+                width: 46px;
+                min-height: 46px;
                 background-repeat: no-repeat;
                 -webkit-transition: background 1s;
                 -moz-transition: background 1s;
                 -o-transition: background 1s;
                 transition: background 1s;
+                .titlezona {
+                    
+                    width: 147px;
+                    position: relative;
+                    top: -116px;
+                    left: 50px;
+                    font-size: 14px;
+                    opacity: 0;
+                    .nombredepartamento{
+                        font-family: 'Libre Franklin', sans-serif;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        font-size: 14px;
+                        line-height: 1.6em;
+                        color: #2c2327;
+                    }
+                    .mensaje{
+                        font-family: 'Ibarra Real Nova', serif;
+                        font-weight: 400;
+                        letter-spacing: 1px;
+                        font-size: 22px;
+                        line-height: 1.6em;
+                        color: #2c2327;
+                    }
+                    .visitar{
+                        font-family: 'Libre Franklin', sans-serif;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        font-size: 12px;
+                        line-height: 1.6em;
+                        color: #2c2327;
+                    }
+                }
             }
             &:hover{
                 .punto{
-                    background-image: url('../img/cordoba-zona.gif');
+                    .titlezona {
+                        opacity: 1;
+                   }
                 }
             }
         }
@@ -1117,19 +1191,58 @@ section{
             /* left: 427px; */
             /* top: 623px; */
             .punto{
-                background-image: url('../img/caqueta-punto.gif');
+                background-image: url('../img/boton-mapa-azul.svg');
                 background-size: contain;
-                width: 460px;
-                min-height: 300px;
+                width: 46px;
+                min-height: 46px;
                 background-repeat: no-repeat;
                 -webkit-transition: background 1s;
                 -moz-transition: background 1s;
                 -o-transition: background 1s;
                 transition: background 1s;
+                .titlezona {
+                    
+                    width: 147px;
+                    position: relative;
+                    top: -116px;
+                    left: 50px;
+                    font-size: 14px;
+                    opacity: 0;
+
+                    .nombredepartamento{
+                        font-family: 'Libre Franklin', sans-serif;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        font-size: 14px;
+                        line-height: 1.6em;
+                        color: #2c2327;
+                    }
+                    .mensaje{
+                        font-family: 'Ibarra Real Nova', serif;
+                        font-weight: 400;
+                        letter-spacing: 1px;
+                        font-size: 22px;
+                        line-height: 1.6em;
+                        color: #2c2327;
+                    }
+                    .visitar{
+                        font-family: 'Libre Franklin', sans-serif;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        font-size: 12px;
+                        line-height: 1.6em;
+                        color: #2c2327;
+                    }
+
+                }
             }
             &:hover{
                 .punto{
-                    background-image: url('../img/caqueta-zona.gif');
+                    .titlezona {
+                        opacity: 1;
+                   }
                 }
             }
         }
@@ -1149,6 +1262,10 @@ section{
             background: url('../img/exposicion-mapa.jpg') no-repeat left top;
             background-size: cover;
             transform: scale(1.1);
+            -webkit-transition: background 1s;
+                -moz-transition: background 1s;
+                -o-transition: background 1s;
+                transition: background 1s;
         }
     }
 }
