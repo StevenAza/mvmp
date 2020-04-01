@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="47" viewBox="0 0 46 47">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #4ab3f0;
+        stroke-linejoin: round;
+        stroke-width: 6px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Elipse_1_copia_5" data-name="Elipse 1 copia 5" class="cls-1" d="M879.75,1075.76A17.755,17.755,0,1,1,862,1093.51,17.752,17.752,0,0,1,879.75,1075.76Z" transform="translate(-857 -1070)"/>
+</svg>
