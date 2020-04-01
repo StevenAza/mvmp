@@ -211,7 +211,7 @@ function cerrarLateral(e) {
         fullpage_api.silentMoveTo(e);
         $('#fullpage-interna-lat_'+e).addClass('hide');
         $(selector).removeClass('story-open');
-        $('#fullpage .TextWrapper , #fullpage.introduccion , #fullpage .bt-center, #fullpage .ButtonCta').css('display','block');
+        $('#fullpage .TextWrapper , #fullpage.introduccion , #fullpage .bt-center, #fullpage .ButtonCta').css('display','inline-flex');
         
         var objcambiofondo_r = $('#fullpage #section'+ conteo);
         var objencontrado_r = $(objcambiofondo_r).find('.ComponentBgContainer .ComponentBg.ComponentBg--cover.ComponentBg--overlay.ComponentBgContainer.lazyloaded');

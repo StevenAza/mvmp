@@ -117,10 +117,14 @@
     <script>
         var vw;
         var vh
+        var objY = 0;
+        var objX = 0;
         $(document).ready(function ($) {
             vw = $(window).width();
             vh = $(window).height();
-            console.log('alto' + vh + 'ancho' + vw);
+
+            //console.log(objY)
+            
 
             $(".zona.arauca .punto").hover(function () {
                 $('.mapa .wrap .bg').css({ 'background': 'url(./img/fondo-mapa-hover-arauca.jpg) no-repeat left top', 'background-size': 'cover' })
@@ -135,13 +139,25 @@
             window.requestAnimationFrame(moveBackground);
         });
 
+        if(lMouseY >= lFollowY ){
+            alert('se debe correr escroll ')
+        }
+
         var lFollowX = 0,
             lFollowY = 0,
             x = 0,
             y = 0,
             friction = 1 / 30;
-
+        
         function moveBackground() {
+            console.log( objY );
+            if(objY >= 619){    
+                $('html, body').animate({scrollTop:290},'50');   
+            }
+            if (objY <= 150) {                   
+                window.scrollTo(0, 0);                 
+            }
+        
             x += (lFollowX - x) * friction;
             y += (lFollowY - y) * friction;
 
@@ -333,13 +349,16 @@
             window.requestAnimationFrame(moveBackground);
         }
 
+        var lMouseX
+        var lMouseY
         $(window).on('mousemove click', function (e) {
 
-            var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
-            var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+            lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+            lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
             lFollowX = (70 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
             lFollowY = (70 * lMouseY) / 100;
-
+            objY = e.originalEvent.screenY;
+            objX = e.originalEvent.screenX;
         });
 
         moveBackground();
