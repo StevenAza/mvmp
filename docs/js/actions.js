@@ -4,7 +4,7 @@ $(document).ready(function(){
     /* inicio MENU PRINCIPAL */
     var menu =  "<a href='index.html'><div class='logomenu_txt'>MEMORIAS DEL PERIODISMO</div></a>\
                 <ul'>\
-                    <li class='serif'><a href='elmuseo.html'>Sobre el museo</a></li>\
+                    <li class='serif'><a href='elmuseo.html'>El museo</a></li>\
                     <li class='serif'><a href='exposicion.html'>Exposición</a></li>\
                     <br><span class='subtitle'><i>Periodismo, memorias desde adentro</i></span>\
                     <li><a href='arauca.html'>Arauca. Fronteras de la Censura</a></li>\

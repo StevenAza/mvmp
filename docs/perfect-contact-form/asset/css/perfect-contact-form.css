@@ -1,0 +1,51 @@
+body{
+	color: #58666e;
+	background-color: transparent;
+}
+
+
+.panel-default {
+	border-color: transparent;
+	background-color: transparent;
+	border: 0px solid transparent;
+}
+
+
+.text-alignment{
+	text-align:right;
+	padding: 7px;
+}
+.container-alignment{
+	margin: 50px auto;
+}
+/* SMARTPHONES PORTRAIT */
+@media only screen and (min-width: 300px) {
+	.text-alignment{
+		text-align:center;
+	}
+}
+/* SMARTPHONES LANDSCAPE */
+@media only screen and (min-width: 480px) {
+	.text-alignment{
+		text-align:center;
+	}
+}
+/* TABLETS PORTRAIT */
+@media only screen and (min-width: 768px) {
+	.text-alignment{
+		text-align:right;
+	}
+	
+}
+@media only screen and (max-width: 768px) {
+	.bottom-space{
+		margin-bottom:10px;
+	}
+}
+
+/* TABLET LANDSCAPE / DESKTOP */
+@media only screen and (min-width: 1024px) {
+	.text-alignment{
+		text-align:right;
+	}
+}
