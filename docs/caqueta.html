@@ -157,7 +157,7 @@
 <div class="section" id="section9">
     <div class="ComponentBgContainer">
           <div class="ComponentBg ComponentBg--cover ComponentBg--overlay ComponentBgContainer lazyloaded">
-            <video loop id="video_cuatro" data-autoplay data-keepplaying>
+            <video loop id="video_cuatro" data-keepplaying>
                 <source src="caqueta/video/Museo - Caquet - Vdeo Final Tira Central.mp4" type="video/mp4">
               </video>
         </div>
@@ -559,7 +559,7 @@
             </div>
             <div class="section" id="section3">
                 <div class="ComponentBgContainer playervideo">
-                    <video controls data-autoplay data-autoplay data-keepplaying>
+                    <video controls data-autoplay data-keepplaying>
                         <source src="caqueta/video/Museo - Caquet - Beln - Entrevista a Nikol Gonzlez.mp4" type="video/mp4">
                     </video>
                     <p>Nikol González habla sobre su experiencia en la Escuela Audiovisual Infantil de Belén de los Andaquíes.</p>
@@ -588,6 +588,12 @@
     const player_cuatro_interna_5 = new Plyr('#audio_cuatro_interna_5', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
     
 });
+
+        $('#btn_6').onclick(function() {
+            $("#video_cuatro").get(0).pause();
+        });
+
+
       
     </script>
 </body>
