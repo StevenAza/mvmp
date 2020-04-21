@@ -16,6 +16,33 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <style>
+	  .form-control{
+		background-color: rgba(255,255,255,0.1);
+		border: 1px solid transparent;
+    border-radius: 0;
+	  }
+	  .btn-success {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn-success:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+    text-decoration: underline;
+}
+textarea.form-control {
+    color: #ffffff;
+}
+input.form-control{
+	color: #ffffff;
+}
+select.form-control.valid {
+    color: #ffffff;
+}
+	</style>
 </head>
 <body>
 	<!--BEGIN CONTAINER -->
