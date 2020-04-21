@@ -25,6 +25,7 @@ $(document).ready(function(){
 
     /* inicio FULLPAGE HISTORIA CENTRAL */
         myFullpage = new fullpage('#fullpage', {
+        licenseKey: '4%2M$#W?x0',
         navigation: true,
         navigationPosition: 'right',        
         onLeave: function(){            
@@ -200,6 +201,7 @@ function cerrarLateral(e) {
     fullpage_api.destroy('#fullpage-interna-lat_'+e);  
         
             myFullpage = new fullpage('#fullpage', {
+            licenseKey: '4%2M$#W?x0',
             navigation: true,
             navigationPosition: 'right',
             anchors:['#fullpage-interna-lat_'+ e +''],   
