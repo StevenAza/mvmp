@@ -1390,6 +1390,29 @@ section{
 
 /*-----INDEX------*/
 
+div#mute {
+    POSITION: ABSOLUTE;
+    bottom: 10px;
+    right: 10px;
+    DISPLAY: block;
+    Z-INDEX: 9999;
+    cursor: pointer;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/unmuted.png');
+    text-align: center;
+    border-radius: 20px;
+    border: 3px transparent @morado;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    &:hover{
+        background-color:@azulclaro;
+    }
+}
 
 /* RESPONSIVE */
 @import url('css-breakpoint-mixins.less');

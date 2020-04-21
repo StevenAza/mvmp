@@ -1,6 +1,23 @@
 var myFullpage;
 $(document).ready(function(){   
-    
+
+/* MUTE */ 
+var vidgeneral = $('video, audio');
+var pathurl = "../img/";
+$("#mute").click(function(){
+    if( $(vidgeneral).prop('muted') ) {
+        $("#mute").css('background-image', 'url(' + pathurl + 'unmuted.png)');
+    for (var i = 0; i < vidgeneral.length; ++i) {
+        vidgeneral[i].muted = false;
+    }
+}else {
+    $("#mute").css('background-image', 'url(' + pathurl + 'muted.png)');
+    for (var i = 0; i < vidgeneral.length; ++i) {
+        vidgeneral[i].muted = true;
+    }
+  }
+});
+
     /* inicio MENU PRINCIPAL */
     var menu =  "<a href='index.html'><div class='logomenu_txt'>MEMORIAS DEL PERIODISMO</div></a>\
                 <ul'>\
@@ -56,6 +73,7 @@ $(document).ready(function(){
             cerrarLateral(positionpage);                   
         }  
     });
+
 });
 
 
@@ -270,30 +288,3 @@ $(document).keydown(function (tecla) {
 
 
 
-/* MUTE */
-window.my_mute = false;
-
-$('#my_mute_button').bind('click', function(){
-
-    $('audio,video').each(function(){
-
-        if (!my_mute ) {
-
-            if( !$(this).paused ) {
-                $(this).data('muted',true); //Store elements muted by the button.
-                $(this).pause(); // or .muted=true to keep playing muted
-            }
-
-        } else {
-
-            if( $(this).data('muted') ) {
-                $(this).data('muted',false);
-                $(this).play(); // or .muted=false
-            }
-
-        }
-    });
-
-    my_mute = !my_mute;
-
-});
