@@ -42,7 +42,7 @@ $(document).ready(function(){
     /* fin FULLPAGE HISTORIA CENTRAL */
 
     /* inicio FULLPAGE HISTORIAS LATERALES */
-    /* Ingrid ¿esto se puede general en un bucle que cuenta las páginas y sus secciones? */
+
     /*--------------------------------------------*/
     /* fin FULLPAGE HISTORIAS LATERALES */
 
@@ -89,6 +89,7 @@ var conteoClick = 0;
 var imagenfondo;
 var objencontrado;
 function clicAPage(control) {   
+
     if (conteoClick == 0) {
         
         imagenfondo = $('#fullpage .fp-section.fp-table.active.fp-completely .fp-tableCell')[0].children[0].firstElementChild;
@@ -106,11 +107,13 @@ function clicAPage(control) {
         var objcontent_1 = elementoPadre_1[0].parentElement;
         $(objcontent_1).addClass('story-open');     
        // $(control).toggleClass('active');   
-        fullpage_api.destroy('#fullpage');        
+        fullpage_api.destroy('#fullpage');  
+             
         myFullpage = new fullpage('#fullpage-interna-lat_'+ controlA, {
+            licenseKey: '4%2M$#W?x0',
             navigation: true,
             navigationPosition: 'right',
-            anchors:['#fullpage-interna-lat_'+ controlA +''],            
+            anchors:['#fullpage-interna-lat_'+ controlA +''],     
             onLeave: function(){
                 validavideos();
             }
@@ -118,12 +121,11 @@ function clicAPage(control) {
 
         setTimeout(function(){             
             $('#fullpage-interna-lat_'+ controlA).removeClass('hide');        
-            //validavideos();    
+            //validavideos();
             var classActive = $('#fullpage-interna-lat_' + controlA)[0].className;
             if ((classActive == 'fullpage-wrapper fp-notransition') || (classActive =='fullpage-wrapper')) {            
                 var palyervideo = $('.fp-section.active.fp-completely .ComponentBgContainer.playervideo');
                 if ($(palyervideo).length > 0) {
-                    
                     validavideosplay();
                 } else {
                     validavideos();
@@ -139,8 +141,6 @@ var positionpage;
 function ingresoInternas() {
     if (typeof ($('.fp-section.fp-table.active .btn a')) != "undefined") {
         var vinculoboton = $('.fp-section.fp-table.active .btn a');
-
-
         imagenfondo = $('#fullpage .fp-section.fp-table.active.fp-completely .fp-tableCell')[0].children[0].firstElementChild;        
         $(imagenfondo).attr('id','objfondo');
         $('#fullpage .TextWrapper , #fullpage.introduccion , #fullpage .bt-center, #fullpage .ButtonCta').css('display','none');
@@ -159,6 +159,7 @@ function ingresoInternas() {
             myFullpage = new fullpage('#fullpage-interna-lat_' + positionpage, {
             navigation: true,
             navigationPosition: 'right',
+            licenseKey: '4%2M$#W?x0',
             scrollOverflow:true,
             anchors:['#fullpage-interna-lat_'+ positionpage +''],  
             onLeave: function () {
@@ -167,7 +168,7 @@ function ingresoInternas() {
         });
 
         setTimeout(function () {
-            $('#fullpage-interna-lat_' + positionpage).removeClass('hide');            
+            $('#fullpage-interna-lat_' + positionpage).removeClass('hide');          
             validavideos();
             var classActive = $('#fullpage-interna-lat_' + positionpage)[0].className;          
 
@@ -186,7 +187,6 @@ function ingresoInternas() {
             
         }, 2000);
         validavideos();
-
     }
 }
 
@@ -241,11 +241,12 @@ function validavideosplay(){
                 value.play();
             }             
       }); 
+      $("#video_cuatro").get(0).pause();
 }
 /* fin CERRAR LATERALES */
 
 /* inicio NAVEGACIÓN POR TECLADO */
-/* Ingrid ¿es posible agregar funcionalidad por teclado en esta estructura? */
+
 var tecla;
 $(document).keydown(function (tecla) {    
 	if (tecla.keyCode == 39) {

@@ -157,7 +157,7 @@
 <div class="section" id="section9">
     <div class="ComponentBgContainer">
           <div class="ComponentBg ComponentBg--cover ComponentBg--overlay ComponentBgContainer lazyloaded">
-            <video loop id="video_cuatro" data-keepplaying>
+            <video loop id="video_cuatro" data-autoplay data-keepplaying>
                 <source src="caqueta/video/Museo - Caquet - Vdeo Final Tira Central.mp4" type="video/mp4">
               </video>
         </div>
@@ -400,7 +400,7 @@
             <div class="section" id="section3">
                 <div class="ComponentBgContainer">
                     <div class="ComponentBg ComponentBg--cover ComponentBg--overlay ComponentBgContainer lazyloaded">
-                        <div class="ComponentBg ComponentBg--cover ComponentBgImg lazyloaded" style="background-image: url('foto/');"></div>
+                        <div class="ComponentBg ComponentBg--cover ComponentBgImg lazyloaded" ></div>
                         
                     </div>
                     <span class="TextComponent--audio">Rosemary - Ataques al medio</span>
@@ -431,7 +431,7 @@
         <div id="fullpage-interna-lat_6" class="hide">            
             <div class="section" id="section0">
                 <div class="ComponentBgContainer playervideo">
-                    <video controls data-autoplay data-keepplaying  id="video_interna_6">
+                    <video controls data-autoplay data-keepplaying id="video_interna_6">
                         <source src="caqueta/video/Museo - Caquet - Debate electoral en Paujil.mp4" type="video/mp4">
                     </video>
                     <p>Debate de candidatos a la alcaldía del municipio de Paujíl realizado en Paujíl stereo y dirigido por
@@ -588,12 +588,6 @@
     const player_cuatro_interna_5 = new Plyr('#audio_cuatro_interna_5', {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'pip', 'airplay']});
     
 });
-
-        $('#btn_6').onclick(function() {
-            $("#video_cuatro").get(0).pause();
-        });
-
-
       
     </script>
 </body>
