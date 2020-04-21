@@ -231,6 +231,7 @@ function validavideos(){
                 value.pause();
             }             
       }); 
+      
 }
 
 function validavideosplay(){
@@ -242,6 +243,10 @@ function validavideosplay(){
             }             
       }); 
       $("#video_cuatro").get(0).pause();
+      $("#video_interna_7").get(0).pause();
+      $("#video_tres").get(0).pause();
+      $("#video_2").get(0).pause();
+      $("#video_uno").get(0).pause();
 }
 /* fin CERRAR LATERALES */
 
@@ -262,3 +267,33 @@ $(document).keydown(function (tecla) {
     
 });
 /* fin NAVEGACIÓN POR TECLADO */
+
+
+
+/* MUTE */
+window.my_mute = false;
+
+$('#my_mute_button').bind('click', function(){
+
+    $('audio,video').each(function(){
+
+        if (!my_mute ) {
+
+            if( !$(this).paused ) {
+                $(this).data('muted',true); //Store elements muted by the button.
+                $(this).pause(); // or .muted=true to keep playing muted
+            }
+
+        } else {
+
+            if( $(this).data('muted') ) {
+                $(this).data('muted',false);
+                $(this).play(); // or .muted=false
+            }
+
+        }
+    });
+
+    my_mute = !my_mute;
+
+});
