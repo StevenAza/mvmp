@@ -931,6 +931,13 @@ section{
     background-color: @morado;
     font-family: 'Ibarra Real Nova';
         color: @blanco2;
+        .mapa{
+                background: rgb(222,236,245);
+            background: -moz-linear-gradient(90deg, rgba(222,236,245,1) 0%, rgba(249,247,243,1) 100%);
+            background: -webkit-linear-gradient(90deg, rgba(222,236,245,1) 0%, rgba(249,247,243,1) 100%);
+            background: linear-gradient(90deg, rgba(222,236,245,1) 0%, rgba(249,247,243,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#deecf5",endColorstr="#f9f7f3",GradientType=1);
+        }
     h1{
         font-family: 'Libre Franklin', sans-serif;
         text-transform: uppercase;
@@ -1032,7 +1039,7 @@ section{
         }
     }
     .expo{
-        padding: 50px 0;
+        //padding: 50px 0;
         color: lighten(@morado, 10%);
         h1{
            color: @morado;
@@ -1048,6 +1055,7 @@ section{
             left: 50px;
             position: fixed;
             max-width: 500px;
+            top: 100px;
             .bloque {
                 font-size: 18px;
             }
@@ -1056,6 +1064,7 @@ section{
 }
 
 .mapa {
+    /*
     width: 1500px;
     height: 1643px;
     z-index: 0;
@@ -1072,8 +1081,7 @@ section{
         z-index: 1;
         &.arauca{
             position: absolute;
-            /* left: 795px; */
-            /* top: 310px; */
+
             .punto{
                 background-image: url('../img/boton-mapa-cafe.svg');
                 background-size: contain;
@@ -1121,7 +1129,6 @@ section{
             }
             &:hover{
                 .punto{
-                   /* background-image: url('../img/fondo-mapa-hover-arauca.jpg');*/
                    .titlezona {
                         opacity: 1;
                    }
@@ -1130,8 +1137,6 @@ section{
         }
         &.cordoba{
             position: absolute;
-            /* left: 509px; */
-            /* top: 181px; */
             .punto{
                 background-image: url('../img/boton-mapa-verde.svg');
                 background-size: contain;
@@ -1143,7 +1148,6 @@ section{
                 -o-transition: background 1s;
                 transition: background 1s;
                 .titlezona {
-                    
                     width: 147px;
                     position: relative;
                     top: -116px;
@@ -1188,8 +1192,6 @@ section{
         }
         &.caqueta{
             position: absolute;
-            /* left: 427px; */
-            /* top: 623px; */
             .punto{
                 background-image: url('../img/boton-mapa-azul.svg');
                 background-size: contain;
@@ -1263,11 +1265,67 @@ section{
             background-size: cover;
             transform: scale(1.1);
             -webkit-transition: background 1s;
-                -moz-transition: background 1s;
-                -o-transition: background 1s;
-                transition: background 1s;
+            -moz-transition: background 1s;
+            -o-transition: background 1s;
+            transition: background 1s;
         }
     }
+*/
+
+#punto_cordoba{
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+    z-index:2;
+  }
+  #image_cordoba{
+      position: absolute;
+      opacity: 0;
+      z-index:1;
+      -webkit-transition: all 0.5s ease-out;  
+      -moz-transition: all 0.5s ease-out;  
+      -o-transition: all 0.5s ease-out;  
+      transition: all 0.5s ease-out;
+    }
+  #punto_arauca{
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+    z-index:2;
+  }
+  #image_arauca{
+      position: absolute;
+      opacity: 0;
+      z-index:1;
+      -webkit-transition: all 0.5s ease-out;  
+      -moz-transition: all 0.5s ease-out;  
+      -o-transition: all 0.5s ease-out;  
+      transition: all 0.5s ease-out;
+    }
+  
+  #punto_caqueta{
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+    z-index:2;
+  }
+  #image_caqueta{
+      position: absolute;
+      opacity: 0;
+      z-index:1;
+      -webkit-transition: all 0.5s ease-out;  
+      -moz-transition: all 0.5s ease-out;  
+      -o-transition: all 0.5s ease-out;  
+      transition: all 0.5s ease-out;
+    }
+  
+  #fondomapa {
+    width: 100vw;
+    height: 100vh;
+    background: url('../img/exposicion-mapa_1920x1700.jpg') 50% 50% no-repeat ;
+  }
+  
+  
 }
 
 #elmuseo section.buttonset {  
