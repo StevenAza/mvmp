@@ -244,6 +244,15 @@ function cerrarLateral(e) {
         $('#objfondo').remove();
         //$(objencontrado_r).append(imagenfondo);
         $(imagenfondo).insertBefore(textsection);
+       var videoprinciapl=  $(objcambiofondo_r).find("video");
+       if(videoprinciapl != "undefined"){           
+           $.each( videoprinciapl, function( key, value ) {
+            var objv= value;
+            if((value.hasAttribute('data-keepplaying')== true) && ( typeof value.pause === 'function')){
+                    value.play();
+                }             
+          });
+       }
         //validavideos();
 }
 
