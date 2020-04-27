@@ -109,11 +109,12 @@ var imagenfondo;
 var objencontrado;
 function clicAPage(control) {   
 
-    if (conteoClick == 0) {
+    //if (conteoClick == 0) {
         
         imagenfondo = $('#fullpage .fp-section.fp-table.active.fp-completely .fp-tableCell')[0].children[0].firstElementChild;
         
         $(imagenfondo).attr('id','objfondo');
+        //$(imagenfondo).addClass('imgultimaposition');
         $('#fullpage .TextWrapper , #fullpage.introduccion , #fullpage .bt-center, #fullpage .ButtonCta').css('display','none');
         var idseccion = $('#fullpage .section').length - 1 ;  
         var objcambiofondo = $('#fullpage .section')[idseccion];      
@@ -153,7 +154,8 @@ function clicAPage(control) {
             }
         }, 2000); 
         conteoClick++;
-    }
+    //}
+   
 }
 
 var positionpage;
@@ -235,10 +237,13 @@ function cerrarLateral(e) {
         $('#fullpage .TextWrapper , #fullpage.introduccion , #fullpage .bt-center, #fullpage .ButtonCta').css('display','inline-flex');
         
         var objcambiofondo_r = $('#fullpage #section'+ conteo);
-        var objencontrado_r = $(objcambiofondo_r).find('.ComponentBgContainer .ComponentBg.ComponentBg--cover.ComponentBg--overlay.ComponentBgContainer.lazyloaded');
+        //var objencontrado_r = $(objcambiofondo_r).find('.ComponentBgContainer ComponentBg.ComponentBg--cover.ComponentBg--overlay.ComponentBgContainer.lazyloaded');
+        var objencontrado_r = objcambiofondo_r[0].firstChild.children[0];
+        var textsection = objcambiofondo_r[0].firstChild.children[0].children[0];
         objencontrado.show();
         $('#objfondo').remove();
-        $(objcambiofondo_r).append(imagenfondo);
+        //$(objencontrado_r).append(imagenfondo);
+        $(imagenfondo).insertBefore(textsection);
         //validavideos();
 }
 
