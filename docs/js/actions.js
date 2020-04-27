@@ -261,11 +261,6 @@ function validavideosplay(){
                 value.play();
             }             
       }); 
-      $("#video_cuatro").get(0).pause();
-      $("#video_interna_7").get(0).pause();
-      $("#video_tres").get(0).pause();
-      $("#video_2").get(0).pause();
-      $("#video_uno").get(0).pause();
 }
 /* fin CERRAR LATERALES */
 
