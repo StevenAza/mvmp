@@ -143,7 +143,7 @@ function clicAPage(control) {
         $('#fullpage-interna-lat_' + controlA).removeClass('hide');
         //validavideos();
         var classActive = $('#fullpage-interna-lat_' + controlA)[0].className;
-        if ((classActive == 'fullpage-wrapper fp-notransition') || (classActive == 'fullpage-wrapper')) {
+        /*if ((classActive == 'fullpage-wrapper fp-notransition') || (classActive == 'fullpage-wrapper')) {
             var palyervideo = $('.fp-section.active.fp-completely .ComponentBgContainer.playervideo');
             if ($(palyervideo).length > 0) {
                 validavideosplay();
@@ -151,7 +151,7 @@ function clicAPage(control) {
                 validavideos();
             }
 
-        }
+        }*/ 
     }, 2000);
     conteoClick++;
     //}
