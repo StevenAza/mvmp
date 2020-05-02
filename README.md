@@ -1,4 +1,4 @@
-# mvmp_strapi
+# mvmp
 
 Museo virtual Memorias del Periodismo de la Fundación para la Libertad de Prensa (FLIP).
 
