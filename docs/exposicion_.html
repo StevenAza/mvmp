@@ -83,7 +83,7 @@
     
   <div class="map d-none d-md-block">
       <div class="fondo">
-          <div id="follower"></div>
+          <div id="base"></div>
       </div>
   </div>
 
@@ -100,6 +100,11 @@
   </div>
 
     <script>
+
+    
+
+    
+
     var mouseX = 0, mouseY = 0, limitX = window.innerWidth, limitY = window.innerHeight;
     $('.map').mousemove(function(e){
       var offset = $('.map').offset();
@@ -107,20 +112,21 @@
       mouseY = Math.min(e.pageY/2 - offset.top, limitY);
       if (mouseX < 0) mouseX = 0;
       if (mouseY < 0) mouseY = 0;
-      console.log(mouseX + ' ' + mouseY);
+      //console.log(mouseX + ' ' + mouseY);
     });
 
     // cache the selector
-    var follower = $("#follower");
+    var image = document.getElementById('base');
+
+    var base = $("#base");
     var xp = 0, yp = 0;
     var loop = setInterval(function(){
         // change 12 to alter damping higher is slower
         xp += (mouseX - xp) / 200;
         yp += (mouseY - yp) / 200;
-        console.log(xp + ' ' + yp);
-        follower.css(
-            {left:xp-1, top:yp-1}
-        );
+        //console.log(xp + ' ' + yp);
+        //base.css({left:xp-1, top:yp-1});
+        base.css("background-position", xp + "% " + yp + "%");
     }, 0);
 
     </script>
