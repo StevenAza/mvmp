@@ -58,7 +58,7 @@
         <div id="nav_list">Menu</div>
     </section>
 
-    <div id="fullpage" class="container expo">
+    <div id="fullpage" class="container expo" style="display: none;">
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-4 izq">
                 <h1>EXPOSICIÓN</h1>
@@ -82,6 +82,15 @@
     </div>
     
   <div class="map d-none d-md-block">
+    <div id="punto_cordoba">
+        <img class="punto" src="./img/boton-mapa-transparente.gif" />
+    </div>
+    <div id="punto_arauca">
+        <img class="punto" src="./img/boton-mapa-transparente.gif" />
+    </div>
+    <div id="punto_caqueta">
+        <img class="punto" src="./img/boton-mapa-transparente.gif" />
+    </div>
       <div class="fondo">
           <div id="base"></div>
       </div>
@@ -100,34 +109,35 @@
   </div>
 
     <script>
+        var mouseX = 0, mouseY = 0, limitX = window.innerWidth, limitY = window.innerHeight;
+        var punto_cordoba = document.getElementById('punto_cordoba');
+        var punto_arauca = document.getElementById('punto_arauca');
+        var punto_caqueta = document.getElementById('punto_caqueta');
+        $('.map').mousemove(function(e){
+        mouseX = Math.min(e.pageX/15, limitX);
+        mouseY = Math.min(e.pageY/10, limitY);
+        if (mouseX < 0) mouseX = 0;
+        if (mouseY < 0) mouseY = 0;
+        console.log(mouseX + ' ' + mouseY);
+        });
+        var image = document.getElementById('base');
+        var base = $("#base");
+        var xp = 0, yp = 0;
+        var loop = setInterval(function(){
+            xp += (mouseX - xp) / 200;
+            yp += (mouseY - yp) / 200;
+            base.css("background-position", xp + "% " + yp + "%");
 
-    
+            punto_cordoba.style["left"] = 36 + "%";
+            punto_cordoba.style["top"] = 20 + "%";
 
-    
+            punto_arauca.style["left"] = 60 + "%";
+            punto_arauca.style["top"] = 30 + "%";
 
-    var mouseX = 0, mouseY = 0, limitX = window.innerWidth, limitY = window.innerHeight;
-    $('.map').mousemove(function(e){
-      var offset = $('.map').offset();
-      mouseX = Math.min(e.pageX/2 - offset.left, limitX);
-      mouseY = Math.min(e.pageY/2 - offset.top, limitY);
-      if (mouseX < 0) mouseX = 0;
-      if (mouseY < 0) mouseY = 0;
-      //console.log(mouseX + ' ' + mouseY);
-    });
+            punto_caqueta.style["left"] = 43 + "%";
+            punto_caqueta.style["top"] = 62 + "%";
 
-    // cache the selector
-    var image = document.getElementById('base');
-
-    var base = $("#base");
-    var xp = 0, yp = 0;
-    var loop = setInterval(function(){
-        // change 12 to alter damping higher is slower
-        xp += (mouseX - xp) / 200;
-        yp += (mouseY - yp) / 200;
-        //console.log(xp + ' ' + yp);
-        //base.css({left:xp-1, top:yp-1});
-        base.css("background-position", xp + "% " + yp + "%");
-    }, 0);
+        }, 0);
 
     </script>
 

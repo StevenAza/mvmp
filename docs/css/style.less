@@ -1290,7 +1290,6 @@ section{
         }
     }
 */
-
 #punto_cordoba{
     position: absolute;
     background: transparent;
@@ -1341,7 +1340,7 @@ section{
   #fondomapa {
     width: 100vw;
     height: 100vh;
-    background: url('../img/exposicion-mapa_1920x1700.jpg') 50% 50% no-repeat ;
+    background: url('../img/exposicion-mapa_1920x2091.jpg') 50% 50% no-repeat ;
 
     /* transition-property: background-position; */
     /* transition-duration: 3s; */
@@ -1354,6 +1353,28 @@ section{
 
 
   .map {
+
+    #punto_cordoba{
+        position: absolute;
+        background: transparent;
+        cursor: pointer;
+        z-index:2;
+        border: 1px dotted red;
+    }
+    #punto_arauca{
+        position: absolute;
+        background: transparent;
+        cursor: pointer;
+        z-index:2;
+        border: 1px dotted red;
+    }
+    #punto_caqueta{
+        position: absolute;
+        background: transparent;
+        cursor: pointer;
+        z-index:2;
+        border: 1px dotted red;
+    }
       width:100vw;
       height:100vh;   
       position:absolute;
@@ -1361,13 +1382,18 @@ section{
       left:0;
       overflow:hidden;
       border:3px solid fuchsia;
+      background: rgb(225,235,245);
+      background: -moz-linear-gradient(141deg, rgba(225,235,245,1) 19%, rgba(249,246,241,1) 76%);
+      background: -webkit-linear-gradient(141deg, rgba(225,235,245,1) 19%, rgba(249,246,241,1) 76%);
+      background: linear-gradient(141deg, rgba(225,235,245,1) 19%, rgba(249,246,241,1) 76%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e1ebf5",endColorstr="#f9f6f1",GradientType=1);
       .fondo{border:3px solid blue;}
       &:hover #follower { display:block; }
       #base{
         border:3px solid yellow;
         position : absolute;
-        background: url('../img/exposicion-mapa_1920x1700.jpg');
-        background-position: left top;
+        background-image: url('../img/exposicion-mapa_1920x1700.jpg');
+        background-repeat: no-repeat;
         height: 100vh;
         width: 100vw;
       }
