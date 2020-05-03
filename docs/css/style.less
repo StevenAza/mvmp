@@ -1352,6 +1352,27 @@ section{
   
 }
 
+
+  .map {
+      width:100vw;
+      height:100vh;   
+      position:absolute;
+      top:0;
+      left:0;
+      overflow:hidden;
+      border:3px solid fuchsia;
+      .fondo{border:3px solid blue;}
+      &:hover #follower { display:block; }
+      #follower{
+        border:3px solid yellow;
+        position : absolute;
+        background: url('../img/exposicion-mapa_1920x1700.jpg');
+        background-position: left top;
+        height: 100vh;
+        width: 100vw;
+      }
+  }
+
 #elmuseo section.buttonset {  
    /* z-index: 99;*/
     position: fixed;

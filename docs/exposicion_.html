@@ -58,7 +58,7 @@
         <div id="nav_list">Menu</div>
     </section>
 
-    <div class="container expo">
+    <div id="fullpage" class="container expo">
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-4 izq">
                 <h1>EXPOSICIÓN</h1>
@@ -80,122 +80,48 @@
         </div>
 
     </div>
-<div class="mapa d-none d-md-block">
-    <div id="punto_cordoba">
-        <img class="punto" src="./img/boton-mapa-transparente.gif" />
-    </div>
-      <div id="image_cordoba">
-        <img src="./img/cordoba_txt.gif"/>
+    
+  <div class="map d-none d-md-block">
+      <div class="fondo">
+          <div id="follower"></div>
       </div>
-    <div id="punto_arauca">
-        <img class="punto" src="./img/boton-mapa-transparente.gif" />
-    </div>
-      <div id="image_arauca">
-        <img src="./img/arauca_txt.gif"/>
-      </div>
-    <div id="punto_caqueta">
-        <img class="punto" src="./img/boton-mapa-transparente.gif" />
-    </div>
-      <div id="image_caqueta">
-        <img src="./img/caqueta_txt.gif"/>
-      </div>
-    <div id="fondomapa"></div>
-</div>
-<div class="botones d-block d-sm-none">
-  <a href="arauca.html" alt="Arauca">
-    <div class="arauca_btn"></div>
-  </a>
-  <a href="caqueta.html" alt="Caquetá">
-      <div class="caqueta_btn"></div>
-  </a>
-  <a href="cordoba.html" alt="Córdoba">
-      <div class="cordoba_btn"></div>
-  </a>
-</div>
+  </div>
+
+  <div class="botones d-block d-sm-none">
+    <a href="arauca.html" alt="Arauca">
+      <div class="arauca_btn"></div>
+    </a>
+    <a href="caqueta.html" alt="Caquetá">
+        <div class="caqueta_btn"></div>
+    </a>
+    <a href="cordoba.html" alt="Córdoba">
+        <div class="cordoba_btn"></div>
+    </a>
+  </div>
+
     <script>
-        w = window.innerWidth,
-        h = window.innerHeight,
-        mouseX = e.clientX,
-        mouseY = e.clientY,
-        imageX = (mouseX/w)*100,
-        imageY = (mouseY/h)*100;
-        
+    var mouseX = 0, mouseY = 0, limitX = window.innerWidth, limitY = window.innerHeight;
+    $('.map').mousemove(function(e){
+      var offset = $('.map').offset();
+      mouseX = Math.min(e.pageX/2 - offset.left, limitX);
+      mouseY = Math.min(e.pageY/2 - offset.top, limitY);
+      if (mouseX < 0) mouseX = 0;
+      if (mouseY < 0) mouseY = 0;
+      console.log(mouseX + ' ' + mouseY);
+    });
 
-        function move(e){
-          var punto_cordoba = document.getElementById('punto_cordoba');
-          var image_cordoba = document.getElementById('image_cordoba');
-          var punto_arauca = document.getElementById('punto_arauca');
-          var image_arauca = document.getElementById('image_arauca');
-          var punto_caqueta = document.getElementById('punto_caqueta');
-          var image_caqueta = document.getElementById('image_caqueta');
-          var image = document.getElementById('fondomapa');
-
-          image.style["background-position"] = imageX + "% " + imageY + "%";
-
-          punto_cordoba.style["left"] = 36 + "%";
-          punto_cordoba.style["top"] = 20 + "%";
-          image_cordoba.style["left"] = -6 + imageX + "%";
-          image_cordoba.style["top"] = -19 + imageY + "%";
-
-          punto_arauca.style["left"] = 60 + "%";
-          punto_arauca.style["top"] = 30 + "%";
-          image_arauca.style["left"] = -10 + imageX + "%";
-          image_arauca.style["top"] = -20 + imageY + "%";
-
-          punto_caqueta.style["left"] = 43 + "%";
-          punto_caqueta.style["top"] = 62 + "%";
-          image_caqueta.style["left"] = -10 + imageX + "%";
-          image_caqueta.style["top"] = -20 + imageY + "%";
-        }
-
-        $( "#punto_cordoba" ).click(function () {
-          url = "/cordoba.html";
-          window.location.href = url;
-        });
-        $( "#punto_arauca" ).click(function () {
-          url = "/arauca.html";
-          window.location.href = url;
-        });
-
-        $( "#punto_caqueta" ).click(function () {
-          url = "/caqueta.html";
-          window.location.href = url;
-        });
-
-
-        $( "#punto_cordoba" ).mouseenter(function() {
-        $("#image_cordoba").css("opacity","1");
-        });
-        $( "#punto_cordoba" ).mouseleave(function() {
-        $("#image_cordoba").css("opacity","0");
-        });
-        $( "#punto_arauca" ).mouseenter(function() {
-        $("#image_arauca").css("opacity","1");
-        });
-        $( "#punto_arauca" ).mouseleave(function() {
-        $("#image_arauca").css("opacity","0");
-        });
-        $( "#punto_caqueta" ).mouseenter(function() {
-        $("#image_caqueta").css("opacity","1");
-        });
-        $( "#punto_caqueta" ).mouseleave(function() {
-        $("#image_caqueta").css("opacity","0");
-        });
-
-
-        function smooth_pos(){
-          var xDistance = mouseX - ship.x;
-          var yDistance = mouseY - ship.y;
-          var distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
-          if (distance > 1) {
-            ship.x += xDistance * easingAmount;
-            ship.y += yDistance * easingAmount;
-          }
-        }
-
-
-        /*window.addEventListener('resize', move);*/
-        window.addEventListener('mousemove', move);
+    // cache the selector
+    var follower = $("#follower");
+    var xp = 0, yp = 0;
+    var loop = setInterval(function(){
+        // change 12 to alter damping higher is slower
+        xp += (mouseX - xp) / 200;
+        yp += (mouseY - yp) / 200;
+        console.log(xp + ' ' + yp);
+        follower.css(
+            {left:xp-1, top:yp-1}
+        );
+    }, 0);
 
     </script>
 
