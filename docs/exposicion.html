@@ -58,7 +58,7 @@
         <div id="nav_list">Menu</div>
     </section>
 
-    <div id="fullpage" class="container expo" style="display: none;">
+    <div id="fullpage" class="container expo">
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-4 izq">
                 <h1>EXPOSICIÓN</h1>
@@ -82,12 +82,15 @@
     </div>
     
   <div class="map d-none d-md-block">
+    <div class="cordoba_txt"><img src="./img/cordoba_txt.gif" /></div>
     <div id="punto_cordoba">
         <img class="punto" src="./img/boton-mapa-transparente.gif" />
     </div>
+    <div class="arauca_txt"><img src="./img/arauca_txt.gif" /></div>
     <div id="punto_arauca">
         <img class="punto" src="./img/boton-mapa-transparente.gif" />
     </div>
+    <div class="caqueta_txt"><img src="./img/caqueta_txt.gif" /></div>
     <div id="punto_caqueta">
         <img class="punto" src="./img/boton-mapa-transparente.gif" />
     </div>
@@ -113,6 +116,9 @@
         var punto_cordoba = document.getElementById('punto_cordoba');
         var punto_arauca = document.getElementById('punto_arauca');
         var punto_caqueta = document.getElementById('punto_caqueta');
+        var arauca_txt = $('.arauca_txt');
+        var cordoba_txt = $('.cordoba_txt');
+        var caqueta_txt = $('.caqueta_txt');
         $('.map').mousemove(function(e){
         mouseX = Math.min(e.pageX/15, limitX);
         mouseY = Math.min(e.pageY/10, limitY);
@@ -134,8 +140,8 @@
             punto_arauca.style["left"] = 60 + "%";
             punto_arauca.style["top"] = 30 + "%";
 
-            punto_caqueta.style["left"] = 43 + "%";
-            punto_caqueta.style["top"] = 62 + "%";
+            punto_caqueta.style["left"] = 44 + "%";
+            punto_caqueta.style["top"] = 58 + "%";
 
         }, 0);
         
@@ -143,14 +149,31 @@
           url = "/cordoba.html";
           window.location.href = url;
         });
+        $( "#punto_cordoba" ).mouseover(function () {
+            cordoba_txt.css("opacity", "1");
+        });
+        $( "#punto_cordoba" ).mouseout(function () {
+            cordoba_txt.css("opacity", "0");
+        });
         $( "#punto_arauca" ).click(function () {
           url = "/arauca.html";
           window.location.href = url;
         });
-
+        $( "#punto_arauca" ).mouseover(function () {
+            arauca_txt.css("opacity", "1");
+        });
+        $( "#punto_arauca" ).mouseout(function () {
+            arauca_txt.css("opacity", "0");
+        }); 
         $( "#punto_caqueta" ).click(function () {
           url = "/caqueta.html";
           window.location.href = url;
+        });
+        $( "#punto_caqueta" ).mouseover(function () {
+            caqueta_txt.css("opacity", "1");
+        });
+        $( "#punto_caqueta" ).mouseout(function () {
+            caqueta_txt.css("opacity", "0");
         });
     </script>
 
