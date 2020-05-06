@@ -8,4 +8,4 @@ Interfaz basada en el proyecto [Fullpage](https://github.com/alvarotrigo/fullPag
 
 ## Back-end
 
-Gestión de contenidos basada en el esquema [nextjs-react-strapi](https://github.com/strapi/strapi-examples/tree/master/nextjs-react-strapi-deliveroo-clone-tutorial).
+Gestión de contenidos basada en el esquema [fullPage.js plugin for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/).
