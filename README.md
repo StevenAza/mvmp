@@ -8,4 +8,8 @@ Interfaz basada en el proyecto [Fullpage](https://github.com/alvarotrigo/fullPag
 
 ## Back-end
 
-Gestión de contenidos basada en Wordpress con el complemento [fullPage.js plugin for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/).
+Editor en interfaz web para  cargar todo tipo de contenido: texto, imágenes, fragmentos, citas y videos.
+
+Modelo de datos y estructura para la administración de colecciones y categorías.
+
+Administración de usuarios, roles y permisos
