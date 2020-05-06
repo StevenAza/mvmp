@@ -8,4 +8,4 @@ Interfaz basada en el proyecto [Fullpage](https://github.com/alvarotrigo/fullPag
 
 ## Back-end
 
-Gestión de contenidos basada en el esquema [fullPage.js plugin for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/).
+Gestión de contenidos basada en Wordpress con el complemento [fullPage.js plugin for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/).
